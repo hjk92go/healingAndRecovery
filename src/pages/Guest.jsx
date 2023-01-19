@@ -1,6 +1,12 @@
+import "../css/Guest.css"
+
 const Guest = () => {
     return ( 
-        <div>비회원페이지입니다.</div>
+        <div>
+            <div className="cheerUp">
+                출력될 공간입니다.
+            </div>
+        </div>
      );
 }
  

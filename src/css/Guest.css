@@ -1,0 +1,14 @@
+
+body{
+    background-image:url('../img/backgroundIMG_2.jpg');
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;    
+    background-size: cover;
+}
+
+.cheerUp{
+    color:white;
+    text-align: center;
+    
+}
