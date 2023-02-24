@@ -1,13 +1,14 @@
-import "../css/Guest.css"
+import PrintForGuest from "../components/PrintForGuest";
+import "../css/Guest.css";
 
 const Guest = () => {
-    return ( 
-        <div>
-            <div className="cheerUp">
-                출력될 공간입니다.
-            </div>
-        </div>
-     );
-}
- 
+  return (
+    <div>
+      <div className="cheerUp">
+        <PrintForGuest />
+      </div>
+    </div>
+  );
+};
+
 export default Guest;

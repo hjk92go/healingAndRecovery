@@ -1,14 +1,13 @@
-
-body{
-    background-image:url('../img/backgroundIMG_2.jpg');
-    height: 100vh;
-    width: 100vw;
-    background-repeat: no-repeat;    
-    background-size: cover;
+body {
+  background-image: url("../img/backgroundIMG_2.jpg");
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: 100% 100vh; /* 배경화면 사이즈 일정 크기 유지*/
+  overflow-y: hidden;
 }
 
-.cheerUp{
-    color:white;
-    text-align: center;
-    
+.cheerUp {
+  color: white;
+  text-align: center;
 }
