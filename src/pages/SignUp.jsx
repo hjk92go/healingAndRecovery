@@ -1,26 +1,25 @@
 import firebase from "../data/firebase";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import SignIn from "./SignIn";
 
 const SignUp = () => {
   //이메일과 비밀번호의 값을 가져올 state
   const [email, setEmail] = useState();
-  const [newEmail, setNewEmail] = useState();
   const [password, setPassword] = useState();
-  const [newPassword, setNewPassword] = useState();
 
   //Form의 onSubmit에 연결할 함수
   // Form의 경우에는 새로고침으로 값이 사라질 수 있음
   const onSubmit = (e) => {
     e.preventDefault();
-    setNewEmail(email);
-    setNewPassword(password);
     emailSignUp();
   };
 
-  // console.log(email);
-  console.log(newEmail);
-  console.log(newPassword);
+  //클릭시 로그인 페이지로 네이게이터 넣어주기
+  // const SignInButton = () =>{
+  //   navigate('/')
+  // }
 
   //이메일 회원가입
   const emailSignUp = () => {
@@ -66,7 +65,9 @@ const SignUp = () => {
       {/* <div>비밀번호 확인</div>
         <input type="password" /> - 추후 확인 가능한 코드 작성후 살려야됨*/}
       <br />
-      <button>로그인하기</button>
+      <button>
+        <Link to="SignIn">로그인하기</Link>
+      </button>
       <button>회원가입하기</button>
     </form>
   );

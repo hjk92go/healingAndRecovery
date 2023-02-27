@@ -24,8 +24,7 @@ const firebaseConfig = {
 
 // 파베초기화 - export해서 내보내줘야지 컴포넌트에서 무리없이 사용가능
 export const app = initializeApp(firebaseConfig);
-// export const auth = getAuth(app)
-// 분명히 안됬었는데 또 실행되어 주석처리 해둡니다. 확인해볼것
+export const auth = getAuth(app);
 
 // firebase의 firestore 인스턴스를 변수에 저장, 파베 사용하기 위해 설정
 export const db = getFirestore(app);

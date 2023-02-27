@@ -1,14 +1,47 @@
 import { useState } from "react";
+import { db } from "../data/firebase";
+import firebase from "firebase/compat/app";
+import {
+  collection,
+  query,
+  where,
+  getDocs,
+  orderBy,
+  doc,
+  setDoc,
+  addDoc,
+  updateDoc,
+  arrayUnion,
+  getDoc,
+} from "firebase/firestore";
+import { auth } from "../data/firebase";
 import PrintToday from "../components/PrintToday";
 import "../css/UserPage.css";
 
 const UserPage = () => {
   const [comment, setComment] = useState("");
-  const [insert, setInsert] = useState("");
+  // const [insert, setInsert] = useState("");
+
   const onSubmit = (e) => {
     e.preventDefault();
-    setInsert(comment);
+    // setInsert(comment);
+    addToday();
   };
+
+  // //데이터를 추가하는 함수
+  const addToday = async (e) => {
+    try {
+      const docRef = await addDoc(collection(db, "today"), {
+        text: comment,
+        day: new Date(),
+      });
+      console.log("ok", docRef.id);
+      alert("오늘의 일기 등록 완료");
+    } catch (e) {
+      console.log("error");
+    }
+  };
+
   return (
     <div className="inputText">
       당신의 하루를 입력해주세요
@@ -23,7 +56,7 @@ const UserPage = () => {
         />
         <button>입력</button>
       </form>
-      <PrintToday insert={insert} />
+      <PrintToday />
     </div>
   );
 };

@@ -1,8 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { DataProvider } from "./data/ScriptFile";
 import Home from "./pages/Home";
 import UserPage from "./pages/UserPage";
 import Guest from "./pages/Guest";
-import { DataProvider } from "./data/ScriptFile";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/UserPage" element={<UserPage />} />
             <Route path="/Guest" element={<Guest />} />
+            <Route path="/SignIn" element={<SignIn />} />
+            <Route path="/SignUp" element={<SignUp />} />
           </Routes>
         </BrowserRouter>
       </DataProvider>
