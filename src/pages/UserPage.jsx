@@ -29,7 +29,7 @@ const UserPage = () => {
   };
 
   // //데이터를 추가하는 함수
-  const addToday = async (e) => {
+  const addToday = async () => {
     try {
       const docRef = await addDoc(collection(db, "today"), {
         text: comment,
