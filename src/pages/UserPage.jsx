@@ -33,7 +33,8 @@ const UserPage = () => {
     try {
       const docRef = await addDoc(collection(db, "today"), {
         text: comment,
-        day: new Date(),
+        day: `${new Date().toLocaleDateString()}`,
+        time: new Date(),
       });
       console.log("ok", docRef.id);
       alert("오늘의 일기 등록 완료");

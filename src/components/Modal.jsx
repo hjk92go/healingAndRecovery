@@ -24,7 +24,7 @@ export default function BasicModal({ toss }) {
 
   return (
     <div>
-      <Button onClick={handleOpen}>작성된 게시물</Button>
+      <Button onClick={handleOpen}>현재 작성된 게시물</Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -32,7 +32,7 @@ export default function BasicModal({ toss }) {
         aria-describedby="modal-modal-description">
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
+            작성된 게시물
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             <div className="List">{toss}</div>
