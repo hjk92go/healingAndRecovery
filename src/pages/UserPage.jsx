@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { db } from "../data/firebase";
 import { collection, addDoc } from "firebase/firestore";
-import "../css/UserPage.css";
+import userPage from "../css/UserPage.module.css";
 import { Navigate } from "react-router-dom";
 
 const UserPage = () => {
@@ -32,8 +32,8 @@ const UserPage = () => {
     Navigate("/PrintToday");
   };
   return (
-    <div className="inputText">
-      당신의 하루를 입력해주세요
+    <div className={userPage.inputText}>
+      당신의 하루를 입력해주세요.
       <form onSubmit={onSubmit}>
         <input
           type="text"

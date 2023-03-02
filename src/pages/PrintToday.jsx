@@ -1,15 +1,6 @@
-import {
-  doc,
-  Firestore,
-  getDoc,
-  getDocs,
-  QuerySnapshot,
-  query,
-  collection,
-  orderBy,
-} from "firebase/firestore";
+import { getDocs, query, collection, orderBy } from "firebase/firestore";
 import { db } from "../data/firebase";
-import "../css/PrintToday.css";
+import styles from "../css/PrintToday.module.css";
 import { useEffect, useState } from "react";
 import Modal from "../components/WriteList";
 
@@ -48,11 +39,13 @@ const PrintToday = () => {
   }, []);
 
   return (
-    <div className="userPage_background">
-      {printData.length > 0 && printData[randomNum].data().text}
-      <br />
-      {printData.length > 0 &&
-        printData[randomNum].data().day.toDate().toLocaleDateString()}
+    <div className={styles.background}>
+      <div>
+        {printData.length > 0 && printData[randomNum].data().text}
+        <br />
+        {printData.length > 0 &&
+          printData[randomNum].data().day.toDate().toLocaleDateString()}
+      </div>
       <Modal toss={TodayDB} />
     </div>
   );

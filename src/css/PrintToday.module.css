@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Chosunilbo_myungjo";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Chosunilbo_myungjo";
+  color: skyblue;
+}
+.background {
+  text-align: center;
+  font-size: x-large;
+  background-color: rgba(203, 191, 191, 0.158);
+  width: 100vw;
+  height: 170px;
+  margin-top: 100px;
+  padding-top: 90px;
+}
