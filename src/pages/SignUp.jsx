@@ -1,8 +1,6 @@
-import firebase from "../data/firebase";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import SignIn from "./SignIn";
 
 const SignUp = () => {
   //이메일과 비밀번호의 값을 가져올 state

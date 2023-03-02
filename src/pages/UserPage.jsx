@@ -1,22 +1,8 @@
 import { useState } from "react";
 import { db } from "../data/firebase";
-import firebase from "firebase/compat/app";
-import {
-  collection,
-  query,
-  where,
-  getDocs,
-  orderBy,
-  doc,
-  setDoc,
-  addDoc,
-  updateDoc,
-  arrayUnion,
-  getDoc,
-} from "firebase/firestore";
-import { auth } from "../data/firebase";
-import PrintToday from "../components/PrintToday";
+import { collection, addDoc } from "firebase/firestore";
 import "../css/UserPage.css";
+import { Navigate } from "react-router-dom";
 
 const UserPage = () => {
   const [comment, setComment] = useState("");
@@ -33,16 +19,18 @@ const UserPage = () => {
     try {
       const docRef = await addDoc(collection(db, "today"), {
         text: comment,
-        day: `${new Date().toLocaleDateString()}`,
-        time: new Date(),
+        day: new Date(),
       });
       console.log("ok", docRef.id);
       alert("오늘의 일기 등록 완료");
+      window.location = "/PrintToday";
     } catch (e) {
       console.log("error");
     }
   };
-
+  const goPrintToday = () => {
+    Navigate("/PrintToday");
+  };
   return (
     <div className="inputText">
       당신의 하루를 입력해주세요
@@ -57,7 +45,6 @@ const UserPage = () => {
         />
         <button>입력</button>
       </form>
-      <PrintToday />
     </div>
   );
 };

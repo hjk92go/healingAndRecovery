@@ -1,7 +1,4 @@
 import { Link } from "react-router-dom";
-import GetFirebase from "../components/PrintToday";
-import SignIn from "./SignIn";
-import SignUp from "./SignUp";
 
 const Home = () => {
   return (
