@@ -28,9 +28,7 @@ const UserPage = () => {
       console.log("error");
     }
   };
-  const goPrintToday = () => {
-    Navigate("/PrintToday");
-  };
+
   return (
     <div className={userPage.inputText}>
       당신의 하루를 입력해주세요.
