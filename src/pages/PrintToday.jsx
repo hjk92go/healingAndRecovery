@@ -39,15 +39,9 @@ const PrintToday = () => {
   }, []);
 
   //삭제 버튼 만들어야한다.
-  const deleteDb = async (id) => {
-    const todayDoc = doc(db, "today", id);
-    // try {
-    // const del =
+  const deleteDb = async (text) => {
+    const todayDoc = doc(db, "today", text);
     await deleteDoc(todayDoc);
-    //   console.log("delete ok", del);
-    // } catch (error) {
-    //   console.log("error", error.messange);
-    // }
   };
 
   const TodayDB = printData.map((printData, idx) => (
@@ -57,6 +51,7 @@ const PrintToday = () => {
       <td>
         <button
           onClick={() => {
+            console.log(printData.id);
             deleteDb(printData.id);
             alert("삭제완료");
             readToday();

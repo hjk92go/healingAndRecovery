@@ -4,6 +4,7 @@ import {
   signOut, //로그아웃
 } from "firebase/auth";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const SignIn = () => {
   const [email, setEmail] = useState();
@@ -57,7 +58,13 @@ const SignIn = () => {
             setPassword(e.target.value);
           }}></input>
       </div>
-      <button>로그인</button>
+      <button>
+        <Link to="/SignIn" />
+        로그인
+      </button>
+      <button>
+        <Link to="/SignUp">회원가입</Link>
+      </button>
     </form>
   );
 };

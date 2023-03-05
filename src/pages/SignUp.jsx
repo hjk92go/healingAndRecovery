@@ -1,11 +1,17 @@
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const SignUp = () => {
-  //이메일과 비밀번호의 값을 가져올 state
+  //이메일,비밀번호,확인
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [checkPassword, setCheckPassword] = useState();
+  //검사
+  const [testPassword, setTestPassword] = useState();
+  const [showMessagePass, setShowMessagePass] = useState();
+  const [reShowMessagePass, setReShowMessagePass] = useState();
+  const [okButton, setOkButton] = useState(true);
 
   //Form의 onSubmit에 연결할 함수
   // Form의 경우에는 새로고침으로 값이 사라질 수 있음
@@ -13,11 +19,6 @@ const SignUp = () => {
     e.preventDefault();
     emailSignUp();
   };
-
-  //클릭시 로그인 페이지로 네이게이터 넣어주기
-  // const SignInButton = () =>{
-  //   navigate('/')
-  // }
 
   //이메일 회원가입
   const emailSignUp = () => {
@@ -27,6 +28,7 @@ const SignUp = () => {
         const user = userCredential.user;
         console.log(user);
         alert("회원가입이 완료되었습니다.");
+        window.location = "/SignIn";
       })
 
       .catch((error) => {
@@ -42,6 +44,40 @@ const SignUp = () => {
       });
   };
 
+  const inputPassword = (e) => {
+    setPassword(e.target.value);
+    const regex =
+      /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+])(?!.*[^a-zA-z0-9$`~!@$!%*#^?&\\(\\)\-_=+]).{7,20}$/;
+    if (regex.test(password) === true) {
+      setCheckPassword(true);
+      setShowMessagePass("사용가능 합니다.");
+    } else {
+      setCheckPassword(false);
+      setShowMessagePass("영문, 숫자, 특수문자 포함 8자 이상 입력해주세요");
+    }
+  };
+
+  const correctPassword = (e) => {
+    const isPasswordConfirm = e.target.value;
+    if (password !== isPasswordConfirm) {
+      setTestPassword(false);
+      setReShowMessagePass("비밀번호가 일치하지 않습니다.");
+    } else {
+      setTestPassword(true);
+      setReShowMessagePass("비밀번호가 일치합니다.");
+    }
+  };
+
+  console.log("패스워드", password);
+
+  useEffect(() => {
+    if (checkPassword && testPassword == true) {
+      setOkButton(false);
+    } else {
+      setOkButton(true);
+    }
+  }, [checkPassword, testPassword]);
+
   return (
     //onSubmit넣어야 한꺼번에 모아 보내줌 //백의경우 <form action="서버주소">의 형식으로 보내주기도 한다.
     <form onSubmit={onSubmit}>
@@ -54,19 +90,13 @@ const SignUp = () => {
         }}
       />
       <div>비밀번호</div>
-      <input
-        type="password"
-        onChange={(e) => {
-          setPassword(e.target.value);
-        }}
-      />
-      {/* <div>비밀번호 확인</div>
-        <input type="password" /> - 추후 확인 가능한 코드 작성후 살려야됨*/}
+      <input type="password" onChange={inputPassword} />
+      <div>{showMessagePass}</div>
+      <div>비밀번호 재확인</div>
+      <input type="password" onChange={correctPassword} />
+      <div>{reShowMessagePass}</div>
       <br />
-      <button>
-        <Link to="SignIn">로그인하기</Link>
-      </button>
-      <button>회원가입하기</button>
+      <button disabled={okButton}>가입하기</button>
     </form>
   );
 };
