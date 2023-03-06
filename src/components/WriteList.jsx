@@ -30,15 +30,19 @@ export default function BasicModal({ toss }) {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description">
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="div">
-            작성된 게시물
-          </Typography>
-          <Typography
-            id="modal-modal-description"
-            sx={{ mt: 2 }}
-            component="div">
-            <div className="List">{toss}</div>
-          </Typography>
+          <table>
+            <Typography id="modal-modal-title" variant="h6" component="thead">
+              <tr>
+                <th>작성된 게시물</th>
+              </tr>
+            </Typography>
+            <Typography
+              id="modal-modal-description"
+              sx={{ mt: 2 }}
+              component="tbody">
+              {toss}
+            </Typography>
+          </table>
         </Box>
       </Modal>
     </div>
