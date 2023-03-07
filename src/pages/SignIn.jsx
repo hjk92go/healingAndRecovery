@@ -1,12 +1,15 @@
 import {
   getAuth,
   signInWithEmailAndPassword, //로그인
-  signOut, //로그아웃
+  onAuthStateChanged, //사용자 정보 가져오기
 } from "firebase/auth";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import ScriptFile from "../data/ScriptFile";
 
 const SignIn = () => {
+  const { state, action } = useContext(ScriptFile);
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
@@ -21,8 +24,14 @@ const SignIn = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log(user);
+
+        //키에 데이터 쓰기
+        localStorage.setItem("uid", user.uid);
+        console.log("UID", user.uid);
+        action.setIsLogin(true);
         alert("HI");
+
+        window.location = "/UserPage";
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -37,35 +46,36 @@ const SignIn = () => {
         console.log(errorCode);
       });
   };
+
   return (
-    <form onSubmit={onSubmit}>
-      <div>
-        <h1>로그인</h1>
-      </div>
-      <div>
-        이메일:
-        <input
-          type="email"
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}></input>
-      </div>
-      <div>
-        비밀번호:
-        <input
-          type="password"
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}></input>
-      </div>
-      <button>
-        <Link to="/SignIn" />
-        로그인
-      </button>
-      <button>
-        <Link to="/SignUp">회원가입</Link>
-      </button>
-    </form>
+    <div>
+      <form onSubmit={onSubmit}>
+        <div>
+          <h1>로그인</h1>
+        </div>
+        <div>
+          이메일:
+          <input
+            type="email"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}></input>
+        </div>
+        <div>
+          비밀번호:
+          <input
+            type="password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}></input>
+        </div>
+        <button>로그인</button>
+        <button>
+          <Link to="/SignUp">회원가입</Link>
+        </button>
+      </form>
+      {/* )} */}
+    </div>
   );
 };
 

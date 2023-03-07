@@ -9,12 +9,15 @@ import {
 } from "firebase/firestore";
 import { db } from "../data/firebase";
 import styles from "../css/PrintToday.module.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Modal from "../components/WriteList";
+import ScriptFile from "../data/ScriptFile";
 
 const PrintToday = () => {
+  const { state, action } = useContext(ScriptFile);
   const [printData, setPrintData] = useState([]); //데이터가 배열로!!!
   const randomNum = Math.floor(Math.random() * printData.length);
+
   const readToday = async () => {
     try {
       // today콜렉션의 모든 데이터를 불러는 쿼리, 불러올 데이터에 조건을 넣고싶으면 where 사용해준다.
@@ -44,6 +47,15 @@ const PrintToday = () => {
     await deleteDoc(todayDoc);
   };
 
+  const user = localStorage.getItem("uid");
+  useEffect(() => {
+    if (user) {
+      action.setIsLogin(true);
+    } else {
+      action.setIsLogin(false);
+    }
+  }, [user]);
+
   const TodayDB = printData.map((printData, idx) => (
     <tr key={idx}>
       <td>{printData.data().day.toDate().toLocaleDateString()}</td>
@@ -63,14 +75,20 @@ const PrintToday = () => {
   ));
 
   return (
-    <div className={styles.background}>
-      <div>
-        {printData.length > 0 && printData[randomNum].data().text}
-        <br />
-        {printData.length > 0 &&
-          printData[randomNum].data().day.toDate().toLocaleDateString()}
-      </div>
-      <Modal toss={TodayDB} />
+    <div>
+      {state.isLogin ? (
+        <div className={styles.background}>
+          <div>
+            {printData.length > 0 && printData[randomNum].data().text}
+            <br />
+            {printData.length > 0 &&
+              printData[randomNum].data().day.toDate().toLocaleDateString()}
+          </div>
+          <Modal toss={TodayDB} />
+        </div>
+      ) : (
+        <div>로그인실패</div>
+      )}
     </div>
   );
 };

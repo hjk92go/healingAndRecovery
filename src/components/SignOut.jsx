@@ -1,16 +1,15 @@
-import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { getAuth, signOut } from "firebase/auth";
 
 const SignOut = () => {
-  const navigate = useNavigate();
-  const logOut = () => {
-    authService.signOut();
-    navigate("/");
+  const isSignOut = () => {
+    localStorage.clear();
+    alert("로그아웃되었습니다.");
+    window.location = "/";
   };
-
   return (
     <div>
-      <button onClick={logOut}>로그아웃</button>
+      <button onClick={() => isSignOut()}>로그아웃</button>
     </div>
   );
 };
