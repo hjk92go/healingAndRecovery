@@ -12,7 +12,7 @@ const Guest = () => {
   console.log(state.script[0].comment);
   return (
     <div className={style.cheerUp}>
-      <h2>{state.script[randomNum].comment}</h2>
+      <p>{state.script[randomNum].comment}</p>
       <h2> {state.script[randomNum].author}</h2>
     </div>
   );

@@ -2,9 +2,10 @@ import { useContext, useEffect, useState } from "react";
 import { db } from "../data/firebase";
 import { collection, addDoc } from "firebase/firestore";
 import userPage from "../css/UserPage.module.css";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import SignOut from "../components/SignOut";
 import ScriptFile from "../data/ScriptFile";
+import { getAuth } from "firebase/auth";
 
 const UserPage = () => {
   const { state, action } = useContext(ScriptFile);
@@ -26,40 +27,51 @@ const UserPage = () => {
       action.setIsLogin(false);
     }
   }, [user]);
+  const navigate = useNavigate();
 
   const addToday = async () => {
     try {
+      const auth = getAuth();
+      const onUser = auth.currentUser;
+      const userUid = onUser.uid;
       const docRef = await addDoc(collection(db, "today"), {
         text: comment,
         day: new Date(),
-        // user: user.uid, test...
+        user: userUid,
       });
       console.log("ok", docRef.id);
       console.log("uid", docRef.uid);
       alert("오늘의 일기 등록 완료");
-      window.location = "/PrintToday";
+      // window.location = "/PrintToday";
+      navigate("/PrintToday", { state: { user: userUid } });
     } catch (e) {
       console.log("error");
     }
+    // console.log("UID", user.uid);
   };
+  // console.log("현재UID", userUid);
 
   return (
     <div>
       {state.isLogin ? (
-        <div className={userPage.inputText}>
-          <SignOut />
-          당신의 하루를 입력해주세요.
-          <form onSubmit={onSubmit}>
-            <input
-              type="text"
-              className="insertComment"
-              onChange={(e) => {
-                setComment(e.target.value);
-              }}
-              placeholder="여기에 입력해주세요."
-            />
-            <button>입력</button>
-          </form>
+        <div>
+          <div>
+            <SignOut />
+          </div>
+          <div className={userPage.inputText}>
+            당신의 하루를 입력해주세요.
+            <form onSubmit={onSubmit}>
+              <input
+                type="text"
+                className="insertComment"
+                onChange={(e) => {
+                  setComment(e.target.value);
+                }}
+                placeholder="여기에 입력해주세요."
+              />
+              <button>입력</button>
+            </form>
+          </div>
         </div>
       ) : (
         <div>로그인실패</div>

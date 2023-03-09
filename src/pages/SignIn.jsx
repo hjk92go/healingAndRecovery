@@ -3,7 +3,7 @@ import {
   signInWithEmailAndPassword, //로그인
   onAuthStateChanged, //사용자 정보 가져오기
 } from "firebase/auth";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import ScriptFile from "../data/ScriptFile";
@@ -30,7 +30,6 @@ const SignIn = () => {
         console.log("UID", user.uid);
         action.setIsLogin(true);
         alert("HI");
-
         window.location = "/UserPage";
       })
       .catch((error) => {
@@ -47,34 +46,47 @@ const SignIn = () => {
       });
   };
 
+  const user = localStorage.getItem("uid");
+  //user값이 변할때 마다 리렌더링
+  useEffect(() => {
+    if (user) {
+      action.setIsLogin(true);
+    } else {
+      action.setIsLogin(false);
+    }
+  }, [user]);
+
   return (
     <div>
-      <form onSubmit={onSubmit}>
-        <div>
-          <h1>로그인</h1>
-        </div>
-        <div>
-          이메일:
-          <input
-            type="email"
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}></input>
-        </div>
-        <div>
-          비밀번호:
-          <input
-            type="password"
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}></input>
-        </div>
-        <button>로그인</button>
-        <button>
-          <Link to="/SignUp">회원가입</Link>
-        </button>
-      </form>
-      {/* )} */}
+      {state.isLogin ? (
+        <div>이미 로그인된 상태입니다.</div>
+      ) : (
+        <form onSubmit={onSubmit}>
+          <div>
+            <h1>로그인</h1>
+          </div>
+          <div>
+            이메일:
+            <input
+              type="email"
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}></input>
+          </div>
+          <div>
+            비밀번호:
+            <input
+              type="password"
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}></input>
+          </div>
+          <button>로그인</button>
+          <button>
+            <Link to="/SignUp">회원가입</Link>
+          </button>
+        </form>
+      )}
     </div>
   );
 };
