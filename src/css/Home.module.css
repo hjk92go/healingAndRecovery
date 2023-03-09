@@ -6,8 +6,16 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "GyeonggiBatang";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiBatang.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .main {
-  font-family: "Chosunilbo_myungjo";
+  font-family: "GyeonggiBatang";
   color: white;
   text-align: center;
   display: flex;
@@ -15,15 +23,22 @@
   align-items: center; /**아이템 세로 중간*/
   justify-content: center;
 }
-span {
+.main span {
+  display: flex;
   font-size: xxx-large;
   width: 100vw;
   justify-content: center;
   margin-top: 15%;
-  margin-left: 50px;
+}
+.linkBtn {
+  display: flex;
+  margin-top: 21px;
+  margin-right: 50px;
 }
 .btn10 {
+  font-family: "GyeonggiBatang";
   display: flex;
+  flex-wrap: nowrap;
   align-content: center;
   align-items: center; /**아이템 세로 중간*/
   justify-content: center; /**아이템 가로정렬*/

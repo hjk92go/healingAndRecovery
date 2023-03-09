@@ -1,14 +1,19 @@
 @font-face {
-  font-family: "Chosunilbo_myungjo";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff")
+  font-family: "GyeonggiBatang";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiBatang.woff")
     format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 .inputText {
-  font-family: "Chosunilbo_myungjo";
+  font-family: "GyeonggiBatang";
   font-size: xx-large;
-  text-align: center;
-  margin-top: 150px;
+  display: flex;
+  color: white;
+}
+.writeForm {
+}
+form {
+  color: azure;
 }

@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { db } from "../data/firebase";
 import { collection, addDoc } from "firebase/firestore";
-import userPage from "../css/UserPage.module.css";
 import { useNavigate } from "react-router-dom";
 import SignOut from "../components/SignOut";
 import ScriptFile from "../data/ScriptFile";
 import { getAuth } from "firebase/auth";
+import userpage from "../css/UserPage.module.css";
 
 const UserPage = () => {
   const { state, action } = useContext(ScriptFile);
@@ -52,15 +52,15 @@ const UserPage = () => {
   // console.log("현재UID", userUid);
 
   return (
-    <div>
+    <div className={userpage.inputText}>
       {state.isLogin ? (
         <div>
           <div>
             <SignOut />
           </div>
-          <div className={userPage.inputText}>
+          <div>
             당신의 하루를 입력해주세요.
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} className={userpage.writeForm}>
               <input
                 type="text"
                 className="insertComment"

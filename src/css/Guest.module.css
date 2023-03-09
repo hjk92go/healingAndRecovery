@@ -1,14 +1,6 @@
 @font-face {
-  font-family: "Chosunilbo_myungjo";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "KyoboHandwriting2020A";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/KyoboHandwriting2020A.woff")
+  font-family: "GyeonggiBatang";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiBatang.woff")
     format("woff");
   font-weight: normal;
   font-style: normal;
@@ -18,7 +10,6 @@ body {
   background-image: url("../img/backgroundIMG_5.jpg");
   height: 100vh;
   width: 100vw;
-
   background-repeat: no-repeat;
   background-size: 100% 100vh; /* 배경화면 사이즈 일정 크기 유지*/
   overflow: hidden;
@@ -31,11 +22,11 @@ body {
   width: 100vw;
   margin-top: 150px;
   margin-left: -50px;
-  font-family: "Chosunilbo_myungjo";
+  font-family: "GyeonggiBatang";
   color: white;
   text-align: center;
-  font-size: large;
+  align-items: center; /**아이템 세로 중간*/
 }
 p {
-  font-size: xx-large;
+  font-size: x-large;
 }

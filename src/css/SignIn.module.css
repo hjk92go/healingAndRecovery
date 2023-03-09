@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "GyeonggiBatang";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiBatang.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.login {
+  font-family: "GyeonggiBatang";
+  color: white;
+  /* margin-top: 150px;
+  margin-left: 500px; */
+  margin: 13%;
+  margin-left: 40%;
+  padding: 20px;
+  align-content: center;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.146);
+}
+.loginBtn {
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+button > a {
+  display: flex;
+  text-decoration: none;
+}

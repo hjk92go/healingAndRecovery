@@ -7,6 +7,7 @@ import { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import ScriptFile from "../data/ScriptFile";
+import signin from "../css/SignIn.module.css";
 
 const SignIn = () => {
   const { state, action } = useContext(ScriptFile);
@@ -61,12 +62,12 @@ const SignIn = () => {
       {state.isLogin ? (
         <div>이미 로그인된 상태입니다.</div>
       ) : (
-        <form onSubmit={onSubmit}>
-          <div>
+        <form onSubmit={onSubmit} className={signin.login}>
+          <div className={signin.loginDiv}>
             <h1>로그인</h1>
           </div>
           <div>
-            이메일:
+            이메일
             <input
               type="email"
               onChange={(e) => {
@@ -74,14 +75,14 @@ const SignIn = () => {
               }}></input>
           </div>
           <div>
-            비밀번호:
+            비밀번호
             <input
               type="password"
               onChange={(e) => {
                 setPassword(e.target.value);
               }}></input>
           </div>
-          <button>로그인</button>
+          <button className={signin.loginBtn}>로그인</button>
           <button>
             <Link to="/SignUp">회원가입</Link>
           </button>

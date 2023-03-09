@@ -8,7 +8,7 @@ import {
   deleteDoc,
 } from "firebase/firestore";
 import { db } from "../data/firebase";
-import styles from "../css/PrintToday.module.css";
+import print from "../css/PrintToday.module.css";
 import { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Modal from "../components/WriteList";
@@ -94,7 +94,7 @@ const PrintToday = () => {
           <div>
             <SignOut />
           </div>
-          <div className={styles.background}>
+          <div className={print.background}>
             <div>
               {printData.length > 0 && printData[randomNum].data().text}
               <br />
