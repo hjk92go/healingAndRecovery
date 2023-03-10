@@ -68,6 +68,7 @@ const SignIn = () => {
           </div>
           <div>
             이메일
+            <br />
             <input
               type="email"
               onChange={(e) => {
@@ -83,7 +84,7 @@ const SignIn = () => {
               }}></input>
           </div>
           <button className={signin.loginBtn}>로그인</button>
-          <button>
+          <button className={signin.signupBtn}>
             <Link to="/SignUp">회원가입</Link>
           </button>
         </form>

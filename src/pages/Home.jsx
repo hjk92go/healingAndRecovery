@@ -16,7 +16,10 @@ const Home = () => {
   }, []);
   return (
     <div className={home.main}>
-      <span className={home.main}>당신을 항상 응원합니다.</span> <br />
+      <span className={home.main}>
+        당신의 끝나지 않는 긴 하루를 마무리 하며
+      </span>{" "}
+      <br />
       {localStorage.getItem("uid") ? (
         <div className={home.linkBtn}>
           <Link to="/UserPage" className={home.btn10} id={home.userBtn}>
