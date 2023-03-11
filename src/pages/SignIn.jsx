@@ -71,6 +71,7 @@ const SignIn = () => {
             <br />
             <input
               type="email"
+              required
               onChange={(e) => {
                 setEmail(e.target.value);
               }}></input>
@@ -79,6 +80,7 @@ const SignIn = () => {
             비밀번호
             <input
               type="password"
+              required
               onChange={(e) => {
                 setPassword(e.target.value);
               }}></input>

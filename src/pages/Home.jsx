@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <div className={home.main}>
       <span className={home.main}>
-        당신의 끝나지 않는 긴 하루를 마무리 하며
+        당신의 끝나지 않은 긴 하루를 마무리 하며
       </span>{" "}
       <br />
       {localStorage.getItem("uid") ? (

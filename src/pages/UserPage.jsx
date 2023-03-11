@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { db } from "../data/firebase";
 import { collection, addDoc } from "firebase/firestore";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SignOut from "../components/SignOut";
 import ScriptFile from "../data/ScriptFile";
 import { getAuth } from "firebase/auth";
@@ -42,7 +42,7 @@ const UserPage = () => {
       console.log("ok", docRef.id);
       console.log("uid", docRef.uid);
       alert("오늘의 일기 등록 완료");
-      // window.location = "/PrintToday";
+      window.location = "/PrintToday";
       navigate("/PrintToday", { state: { user: userUid } });
     } catch (e) {
       console.log("error");
@@ -58,8 +58,11 @@ const UserPage = () => {
           <div>
             <SignOut />
           </div>
+          <button>
+            <Link to="/PrintToday">일기보기</Link>
+          </button>
           <div>
-            당신의 하루를 입력해주세요.
+            당신의 하루를
             <form onSubmit={onSubmit} className={userpage.writeForm}>
               <input
                 type="text"

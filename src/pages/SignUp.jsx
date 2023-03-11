@@ -33,7 +33,6 @@ const SignUp = () => {
 
       .catch((error) => {
         const errorCode = error.code;
-        const errorMessage = error.message;
         if (errorCode === "auth/email-already-in-use") {
           alert("이미 사용중인 이메일입니다.");
         } else if (errorCode === "auth/weak-password") {
