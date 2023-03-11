@@ -10,7 +10,6 @@ import {
 import { db } from "../data/firebase";
 import print from "../css/PrintToday.module.css";
 import { useContext, useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 import Modal from "../components/WriteList";
 import ScriptFile from "../data/ScriptFile";
 import SignOut from "../components/SignOut";
@@ -22,7 +21,7 @@ const PrintToday = () => {
   const selectUserDb = printData.filter(
     (userWrite) => userWrite.data().user === user
   );
-  const randomNum = Math.floor(Math.random() * test.length);
+  const randomNum = Math.floor(Math.random() * selectUserDb.length);
 
   const readToday = async () => {
     try {
@@ -84,9 +83,12 @@ const PrintToday = () => {
   );
 
   return (
-    <div className={print.background}>
-      {selectUserDb.length > 0 && selectUserDb[randomNum].data().text}
-      <Modal toss={TodayDB} />
+    <div>
+      <SignOut />
+      <div className={print.background}>
+        {selectUserDb.length > 0 && selectUserDb[randomNum].data().text}
+        <Modal toss={TodayDB} />
+      </div>
     </div>
   );
 };

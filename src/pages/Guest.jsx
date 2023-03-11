@@ -9,6 +9,8 @@ const Guest = () => {
   //   return Math.floor(Math.random() * 50 + 1);
   // };
 
+  //로그인 중일때 가입창 못가게 막아야함
+
   const randomNum = Math.floor(Math.random() * 50 + 1);
   const { state, action } = useContext(ScriptFile);
   console.log(state.script[0].comment);
