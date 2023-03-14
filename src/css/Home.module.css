@@ -1,13 +1,20 @@
 @font-face {
-  font-family: "Bbang_gunimom";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Bbang_gunimom.woff")
+  font-family: "Chosunilbo_myungjo";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff")
     format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
+.logo img {
+  /* display: flex; */
+  height: 100px;
+  width: 200px;
+  margin-right: -350px;
+  margin-top: -50px;
+}
 .main {
-  font-family: "Bbang_gunimom";
+  font-family: "Chosunilbo_myungjo";
   color: white;
   text-align: center;
   display: flex;
@@ -15,12 +22,12 @@
   align-items: center; /**아이템 세로 중간*/
   justify-content: center;
 }
-.main span {
+.main > span {
   display: flex;
-  font-size: xxx-large;
+  font-size: large;
   width: 100vw;
   justify-content: center;
-  margin-top: 15%;
+  /* margin-top: 15%; */
 }
 .linkBtn {
   display: flex;

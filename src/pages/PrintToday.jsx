@@ -85,8 +85,20 @@ const PrintToday = () => {
   return (
     <div>
       <SignOut />
+      <button
+        onClick={() => {
+          window.location.reload();
+        }}>
+        새로고침
+      </button>
       <div className={print.background}>
-        {selectUserDb.length > 0 && selectUserDb[randomNum].data().text}
+        <div>
+          {selectUserDb.length > 0 && selectUserDb[randomNum].data().text}
+        </div>
+        <div>
+          {selectUserDb.length > 0 &&
+            selectUserDb[randomNum].data().day.toDate().toLocaleDateString()}
+        </div>
         <Modal toss={TodayDB} />
       </div>
     </div>

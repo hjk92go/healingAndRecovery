@@ -16,6 +16,12 @@ const Guest = () => {
   console.log(state.script[0].comment);
   return (
     <div>
+      <button
+        onClick={() => {
+          window.location.reload();
+        }}>
+        새로고침
+      </button>
       <div className={style.cheerUp}>
         <p>{state.script[randomNum].comment}</p>
         <p>- {state.script[randomNum].author} -</p>
