@@ -52,18 +52,22 @@ const UserPage = () => {
   // console.log("현재UID", userUid);
 
   return (
-    <div className={userpage.inputText}>
+    <div>
       {state.isLogin ? (
         <div>
-          <div>
+          {/* <button className={userpage.showBtn}> */}
+          <div className={userpage.showBtn}>
             <SignOut />
           </div>
-          <button>
-            <Link to="/PrintToday">일기보기</Link>
-          </button>
-          <div>
-            당신의 하루를
+
+          <Link className={userpage.showBtn} to="/PrintToday">
+            일기보러가기
+          </Link>
+          {/* </button> */}
+          <div className={userpage.inputText}>
+            <span>당신의 끝나지 않은 긴 하루를 마무리 하며</span>
             <form onSubmit={onSubmit} className={userpage.writeForm}>
+              <div className={userpage.text}>당신의 하루를&nbsp;</div>
               <input
                 type="text"
                 className="insertComment"

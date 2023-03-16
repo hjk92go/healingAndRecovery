@@ -92,12 +92,20 @@ const PrintToday = () => {
         새로고침
       </button>
       <div className={print.background}>
-        <div>
+        <div className={print.text}>
           {selectUserDb.length > 0 && selectUserDb[randomNum].data().text}
         </div>
-        <div>
+        <div className={print.day}>
           {selectUserDb.length > 0 &&
-            selectUserDb[randomNum].data().day.toDate().toLocaleDateString()}
+            selectUserDb[randomNum]
+              .data()
+              .day.toDate()
+              .toLocaleDateString("ko-KR", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+                weekday: "long",
+              })}
         </div>
         <Modal toss={TodayDB} />
       </div>

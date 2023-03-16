@@ -16,8 +16,10 @@ const Home = () => {
   }, []);
   return (
     <div className={home.main}>
-      <img className={home.logo} src={require("../img/logo_wht.png")} />
-      <span>당신의 끝나지 않은 긴 하루를 마무리 하며</span>
+      <div className={home.intro}>
+        <h1>나의 짧은 조각들</h1>
+        <div>오늘 하루는 어땠나요?</div>
+      </div>
       <br />
       {localStorage.getItem("uid") ? (
         <div className={home.linkBtn}>

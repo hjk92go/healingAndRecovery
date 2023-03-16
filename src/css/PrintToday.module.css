@@ -1,16 +1,16 @@
 @font-face {
-  font-family: "Bbang_gunimom";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Bbang_gunimom.woff")
-    format("woff");
+  font-family: "TAEBAEKmilkyway";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/TAEBAEKmilkyway.woff2")
+    format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 body {
-  font-family: "Bbang_gunimom";
-  color: skyblue;
+  font-family: "TAEBAEKmilkyway";
 }
 .background {
+  color: white;
   font-size: xx-large;
   text-align: center;
   background-color: rgba(203, 191, 191, 0.158);

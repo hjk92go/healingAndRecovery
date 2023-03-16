@@ -26,10 +26,10 @@ const Guest = () => {
         <p>{state.script[randomNum].comment}</p>
         <p>- {state.script[randomNum].author} -</p>
       </div>
-      <p>당신의 소중한 하루를 이곳에 보관해주세요.</p>
-      <button>
+      <div className={style.ad}>
+        당신의 소중한 하루를 이곳에 보관해주세요.
         <Link to="/SignUp">회원가입하러가기</Link>
-      </button>
+      </div>
     </div>
   );
 };

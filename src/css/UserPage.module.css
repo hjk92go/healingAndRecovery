@@ -1,18 +1,45 @@
 @font-face {
-  font-family: "Bbang_gunimom";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Bbang_gunimom.woff")
+  font-family: "Chosunilbo_myungjo";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff")
     format("woff");
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "TAEBAEKmilkyway";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/TAEBAEKmilkyway.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .inputText {
-  font-family: "Bbang_gunimom";
+  font-family: "TAEBAEKmilkyway";
   font-size: xx-large;
-  display: flex;
+  display: flex-wrap;
   color: white;
+  padding: 30px;
+  text-align: center;
+  margin-top: 170px;
+}
+.text {
+  margin-top: 4px;
 }
 .writeForm {
+  display: flex;
+  /* text-align: center; */
+  justify-content: center;
 }
-form {
-  color: azure;
+.showBtn {
+  display: flex;
+  font-family: "Chosunilbo_myungjo";
+  color: white;
+  text-decoration-line: none;
+  justify-content: right;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+.showBtn:hover {
+  font-weight: bold;
 }
