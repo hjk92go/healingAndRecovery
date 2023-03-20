@@ -13,9 +13,12 @@
   font-weight: normal;
   font-style: normal;
 }
+body {
+  font-family: "TAEBAEKmilkyway";
+}
 
 form {
-  margin-top: 8px;
+  margin-top: 15px;
 }
 
 .inputText {
@@ -37,25 +40,24 @@ form {
 }
 
 input {
-  border-bottom: white 0.5px solid;
+  border-bottom: #ffffff79 0.5px solid;
   border-left: medium none;
   border-right: medium none;
   border-top: medium none;
   outline: none;
   background: transparent;
-  /* border-bottom-style: double; */
 }
 input {
   color: white;
   font-family: "TAEBAEKmilkyway";
-
   display: inline-block;
   /* label 태그는 inline 태그이므로 width, height, margin 상하가 적용되지 않으므로 inline-block 속성으로 변경해주는 것이 우선이다!*/
-  width: 250px;
+  width: 280px;
   text-align: center;
 }
 ::-webkit-input-placeholder {
-  color: #fff;
+  color: #ffffff79;
+  font-size: large;
 }
 
 .showBtn {
@@ -70,6 +72,11 @@ input {
 .showBtn:hover {
   font-weight: bold;
 }
+.okBtn {
+  border: none;
+  background-color: transparent; /*투명배경*/
+  cursor: pointer;
+}
 .homeBtn {
   display: flex;
   font-family: "Chosunilbo_myungjo";
@@ -81,4 +88,10 @@ input {
 }
 .homeBtn:hover {
   font-weight: bold;
+}
+
+.check {
+  color: rgba(166, 36, 36, 0.861);
+  height: 23px;
+  margin-bottom: -3px;
 }

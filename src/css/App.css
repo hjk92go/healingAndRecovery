@@ -1,0 +1,12 @@
+img {
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: 100% 100vh;
+  /* 배경화면 사이즈 일정 크기 유지 */
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  filter: brightness(60%);
+}

@@ -14,13 +14,9 @@
 }
 
 body {
-  /* background-image: url("../img/backgroundIMG_6.jpg"); */
-  height: 100vh;
-  width: 100vw;
-  background-repeat: no-repeat;
-  background-size: 100% 100vh; /* 배경화면 사이즈 일정 크기 유지*/
-  overflow: hidden;
+  font-family: "TAEBAEKmilkyway";
   color: white;
+  overflow: hidden;
 }
 
 .cheerUp {
@@ -28,7 +24,7 @@ body {
   padding: 60px;
   height: 130px;
   width: 100vw;
-  margin-top: 150px;
+  /* margin-top: 150px; */
   margin-left: -50px;
   font-family: "TAEBAEKmilkyway";
   color: white;

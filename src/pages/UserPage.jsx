@@ -7,6 +7,8 @@ import ScriptFile from "../data/ScriptFile";
 import { getAuth } from "firebase/auth";
 import userpage from "../css/UserPage.module.css";
 import PrintToday from "./PrintToday";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 const UserPage = () => {
   const { state, action } = useContext(ScriptFile);
@@ -43,8 +45,9 @@ const UserPage = () => {
       console.log("ok", docRef.id);
       console.log("uid", docRef.uid);
       alert("오늘의 일기 등록 완료");
-      window.location = "/PrintToday";
-      navigate("/PrintToday", { state: { user: userUid } });
+      //페이지 이동 안쓸꺼면 마지막에 삭제할것
+      // window.location = "/PrintToday";
+      // navigate("/PrintToday", { state: { user: userUid } });
     } catch (e) {
       console.log("error");
     }
@@ -71,16 +74,18 @@ const UserPage = () => {
           <div className={userpage.inputText}>
             <span>당신의 끝나지 않은 긴 하루를 마무리 하며</span>
             <form onSubmit={onSubmit} className={userpage.writeForm}>
-              <div className={userpage.text}>당신의 하루를&nbsp;</div>
+              {/* <div className={userpage.text}>당신의 하루를&nbsp;</div> */}
               <input
                 type="text"
                 className="insertComment"
                 onChange={(e) => {
                   setComment(e.target.value);
                 }}
-                placeholder="여기에 입력해주세요."
+                placeholder="당신의 하루를 여기에 입력해주세요."
               />
-              <button>입력</button>
+              <button className={userpage.okBtn}>
+                <FontAwesomeIcon className={userpage.check} icon={faCheck} />
+              </button>
             </form>
           </div>
           <PrintToday />

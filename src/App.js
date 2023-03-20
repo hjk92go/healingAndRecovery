@@ -6,12 +6,12 @@ import Guest from "./pages/Guest";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import PrintToday from "./pages/PrintToday";
-// import App from "./css/App.css";
+import {} from "./css/App.css";
 
 function App() {
   return (
     <div>
-      <img src={require("../img/backgroundIMG_6.jpg").default} />
+      <img src={require("./img/backgroundIMG_6.jpg")} />
       {/*dataProvider 감싸야 data파일을 읽어올수있다. */}
       <DataProvider>
         <BrowserRouter>
