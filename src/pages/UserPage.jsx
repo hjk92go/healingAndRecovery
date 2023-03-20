@@ -6,6 +6,7 @@ import SignOut from "../components/SignOut";
 import ScriptFile from "../data/ScriptFile";
 import { getAuth } from "firebase/auth";
 import userpage from "../css/UserPage.module.css";
+import PrintToday from "./PrintToday";
 
 const UserPage = () => {
   const { state, action } = useContext(ScriptFile);
@@ -56,13 +57,16 @@ const UserPage = () => {
       {state.isLogin ? (
         <div>
           {/* <button className={userpage.showBtn}> */}
+          <Link className={userpage.homeBtn} to="/">
+            Home
+          </Link>
           <div className={userpage.showBtn}>
             <SignOut />
           </div>
 
-          <Link className={userpage.showBtn} to="/PrintToday">
+          {/* <Link className={userpage.showBtn} to="/PrintToday">
             일기보러가기
-          </Link>
+          </Link> */}
           {/* </button> */}
           <div className={userpage.inputText}>
             <span>당신의 끝나지 않은 긴 하루를 마무리 하며</span>
@@ -79,6 +83,7 @@ const UserPage = () => {
               <button>입력</button>
             </form>
           </div>
+          <PrintToday />
         </div>
       ) : (
         <div>로그인실패</div>

@@ -13,9 +13,45 @@ body {
   color: white;
   font-size: xx-large;
   text-align: center;
-  background-color: rgba(203, 191, 191, 0.158);
+  /* background-color: rgba(203, 191, 191, 0.158); */
   width: 100vw;
-  height: 170px;
-  margin-top: 100px;
-  padding-top: 90px;
+  height: 130px;
+  margin-top: 140px;
+  /* padding-top: 40px; */
+}
+
+.day {
+  font-size: large;
+  font-weight: bold;
+  margin-top: -90px;
+  margin-bottom: 10px;
+  /* color: rgb(77, 16, 135);
+   */
+  color: white;
+}
+.text {
+  font-size: xx-large;
+  font-weight: bold;
+  color: white;
+  margin-top: 20px;
+  /* color: rgb(77, 16, 135); */
+}
+.showList {
+  /* margin-right: 100px; */
+  margin: 0 auto;
+}
+
+span {
+  color: white;
+  /* color: rgb(77, 16, 135); */
+}
+.doubleMark1 {
+  font-size: 100px;
+  margin-bottom: 50px;
+  margin-right: 50px;
+}
+.doubleMark2 {
+  font-size: 100px;
+  margin-top: 50px;
+  margin-left: 950px;
 }

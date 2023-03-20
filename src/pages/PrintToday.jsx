@@ -84,17 +84,16 @@ const PrintToday = () => {
 
   return (
     <div>
-      <SignOut />
+      {/* <SignOut />
       <button
         onClick={() => {
           window.location.reload();
         }}>
         새로고침
-      </button>
+      </button> */}
       <div className={print.background}>
-        <div className={print.text}>
-          {selectUserDb.length > 0 && selectUserDb[randomNum].data().text}
-        </div>
+        <span className={print.doubleMark1}>❝</span>
+        <span className={print.doubleMark2}>❞</span>
         <div className={print.day}>
           {selectUserDb.length > 0 &&
             selectUserDb[randomNum]
@@ -107,8 +106,11 @@ const PrintToday = () => {
                 weekday: "long",
               })}
         </div>
-        <Modal toss={TodayDB} />
+        <div className={print.text}>
+          {selectUserDb.length > 0 && selectUserDb[randomNum].data().text}
+        </div>
       </div>
+      <Modal className={print.showList} toss={TodayDB} />
     </div>
   );
 };

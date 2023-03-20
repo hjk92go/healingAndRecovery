@@ -1,6 +1,7 @@
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import signup from "../css/SignUp.module.css";
 
 const SignUp = () => {
   //이메일,비밀번호,확인
@@ -46,7 +47,7 @@ const SignUp = () => {
   const inputPassword = (e) => {
     setPassword(e.target.value);
     const regex =
-      /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+])(?!.*[^a-zA-z0-9$`~!@$!%*#^?&\\(\\)\-_=+]).{5,20}$/;
+      /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+])(?!.*[^a-zA-z0-9$`~!@$!%*#^?&\\(\\)\-_=+]).{8,20}$/;
     if (regex.test(password) === true) {
       setCheckPassword(true);
       setShowMessagePass("사용가능 합니다.");
@@ -80,22 +81,24 @@ const SignUp = () => {
   return (
     //onSubmit넣어야 한꺼번에 모아 보내줌 //백의경우 <form action="서버주소">의 형식으로 보내주기도 한다.
     <form onSubmit={onSubmit}>
-      <h1>회원가입</h1>
-      <div>이메일</div>
-      <input
-        type="email"
-        onChange={(e) => {
-          setEmail(e.target.value);
-        }}
-      />
-      <div>비밀번호</div>
-      <input type="password" onChange={inputPassword} />
-      <div>{showMessagePass}</div>
-      <div>비밀번호 재확인</div>
-      <input type="password" onChange={correctPassword} />
-      <div>{reShowMessagePass}</div>
-      <br />
-      <button disabled={okButton}>가입하기</button>
+      <div className={signup.createId}>
+        <h1>회원가입</h1>
+        <div>이메일</div>
+        <input
+          type="email"
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+        />
+        <div>비밀번호</div>
+        <input type="password" onChange={inputPassword} />
+        <div>{showMessagePass}</div>
+        <div>비밀번호 재확인</div>
+        <input type="password" onChange={correctPassword} />
+        <div>{reShowMessagePass}</div>
+        <br />
+        <button disabled={okButton}>가입하기</button>
+      </div>
     </form>
   );
 };
