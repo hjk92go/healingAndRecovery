@@ -12,7 +12,8 @@ import print from "../css/PrintToday.module.css";
 import { useContext, useEffect, useState } from "react";
 import Modal from "../components/WriteList";
 import ScriptFile from "../data/ScriptFile";
-import SignOut from "../components/SignOut";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faForward } from "@fortawesome/free-solid-svg-icons";
 
 const PrintToday = () => {
   const { state, action } = useContext(ScriptFile);
@@ -21,7 +22,13 @@ const PrintToday = () => {
   const selectUserDb = printData.filter(
     (userWrite) => userWrite.data().user === user
   );
-  const randomNum = Math.floor(Math.random() * selectUserDb.length);
+
+  const [randomNum, setRandomNum] = useState(
+    Math.floor(Math.random() * selectUserDb.length)
+  );
+  const showScript = () => {
+    setRandomNum(Math.floor(Math.random() * selectUserDb.length));
+  };
 
   const readToday = async () => {
     try {
@@ -84,13 +91,6 @@ const PrintToday = () => {
 
   return (
     <div>
-      {/* <SignOut />
-      <button
-        onClick={() => {
-          window.location.reload();
-        }}>
-        새로고침
-      </button> */}
       <div className={print.background}>
         <span className={print.doubleMark1}>❝</span>
         <span className={print.doubleMark2}>❞</span>
@@ -105,12 +105,20 @@ const PrintToday = () => {
                 day: "numeric",
                 weekday: "long",
               })}
+          <button
+            className={print.reBtn}
+            onClick={() => {
+              showScript();
+            }}>
+            <FontAwesomeIcon className={print.reIcon} icon={faForward} />
+          </button>
         </div>
         <div className={print.text}>
           {selectUserDb.length > 0 && selectUserDb[randomNum].data().text}
         </div>
       </div>
-      <Modal className={print.showList} toss={TodayDB} />
+      <div className={print.days}>지금까지 보관된 일상들</div>
+      {/* <Modal className={print.showList} toss={TodayDB} /> */}
     </div>
   );
 };

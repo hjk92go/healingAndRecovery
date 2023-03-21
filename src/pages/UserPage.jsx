@@ -9,11 +9,11 @@ import userpage from "../css/UserPage.module.css";
 import PrintToday from "./PrintToday";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faHouse } from "@fortawesome/free-solid-svg-icons";
 
 const UserPage = () => {
   const { state, action } = useContext(ScriptFile);
   const [comment, setComment] = useState("");
-  // const [insert, setInsert] = useState("");
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -30,7 +30,6 @@ const UserPage = () => {
       action.setIsLogin(false);
     }
   }, [user]);
-  const navigate = useNavigate();
 
   const addToday = async () => {
     try {
@@ -59,18 +58,15 @@ const UserPage = () => {
     <div>
       {state.isLogin ? (
         <div>
-          {/* <button className={userpage.showBtn}> */}
-          <Link className={userpage.homeBtn} to="/">
-            Home
-          </Link>
-          <div className={userpage.showBtn}>
-            <SignOut />
+          <div className={userpage.towBtns}>
+            <Link className={userpage.homeBtn} to="/">
+              <FontAwesomeIcon className={userpage.homeIcon} icon={faHouse} />
+            </Link>
+            <div className={userpage.outBtn}>
+              <SignOut />
+            </div>
           </div>
 
-          {/* <Link className={userpage.showBtn} to="/PrintToday">
-            일기보러가기
-          </Link> */}
-          {/* </button> */}
           <div className={userpage.inputText}>
             <span>당신의 끝나지 않은 긴 하루를 마무리 하며</span>
             <form onSubmit={onSubmit} className={userpage.writeForm}>

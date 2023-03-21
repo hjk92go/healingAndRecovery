@@ -28,7 +28,7 @@ form {
   color: white;
   /* padding: 30px; */
   text-align: center;
-  margin-top: 10px;
+  margin-top: 40px;
 }
 .text {
   margin-top: 4px;
@@ -60,16 +60,17 @@ input {
   font-size: large;
 }
 
-.showBtn {
+.outBtn {
   display: flex;
-  font-family: "Chosunilbo_myungjo";
+  font-family: "TAEBAEKmilkyway";
   color: white;
   text-decoration-line: none;
   justify-content: right;
+  margin-top: -23px;
   margin-right: 20px;
-  margin-top: 20px;
 }
-.showBtn:hover {
+
+.outBtn:hover {
   font-weight: bold;
 }
 .okBtn {
@@ -79,15 +80,22 @@ input {
 }
 .homeBtn {
   display: flex;
-  font-family: "Chosunilbo_myungjo";
+  font-family: "TAEBAEKmilkyway";
   color: white;
   text-decoration-line: none;
   justify-content: right;
-  margin-right: 20px;
+  margin-right: 65px;
   margin-top: 20px;
+}
+.homeIcon {
+  height: 25px;
 }
 .homeBtn:hover {
   font-weight: bold;
+}
+.towBtns {
+  margin-top: 30px;
+  margin-right: 1150px;
 }
 
 .check {

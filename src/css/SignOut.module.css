@@ -15,3 +15,7 @@
   all: unset;
   cursor: pointer;
 }
+
+.signoutIcon {
+  height: 25px;
+}
