@@ -117,8 +117,8 @@ const PrintToday = () => {
           {selectUserDb.length > 0 && selectUserDb[randomNum].data().text}
         </div>
       </div>
-      <div className={print.days}>지금까지 보관된 일상들</div>
-      {/* <Modal className={print.showList} toss={TodayDB} /> */}
+      {/* <div className={print.days}>지금까지 보관된 일상들</div> */}
+      <Modal className={print.days} toss={TodayDB} />
     </div>
   );
 };

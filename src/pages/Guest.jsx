@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faForward } from "@fortawesome/free-solid-svg-icons";
 import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
+import { faHouse } from "@fortawesome/free-solid-svg-icons";
 const Guest = () => {
   // 함수로 사용하게 되면 매번 새로운 숫자를 불러오기떄문에 숫자 통일 X => usestate를 이용하면 가능
   // const randomNum = () => {
@@ -24,6 +25,9 @@ const Guest = () => {
 
   return (
     <div>
+      <Link className={style.homeBtn} to="/">
+        <FontAwesomeIcon className={style.homeIcon} icon={faHouse} />
+      </Link>
       <div className={style.cheerUp}>
         <span className={style.doubleMark1}>❝</span>
         <span className={style.doubleMark2}>❞</span>

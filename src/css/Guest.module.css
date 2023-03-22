@@ -22,11 +22,10 @@ body {
 .cheerUp {
   /* background-color: rgba(203, 191, 191, 0.158); */
   /* padding: 60px; */
-  margin-top: 190px;
+  margin-top: 150px;
   font-family: "TAEBAEKmilkyway";
   color: white;
   text-align: center;
-  align-items: center; /**아이템 세로 중간*/
   font-size: x-large;
 }
 .ad {
@@ -34,7 +33,7 @@ body {
   font-size: large;
   color: #ffffff79;
   justify-content: center;
-  margin-top: 240px;
+  margin-top: 220px;
 }
 
 div > .doubleMark1 {
@@ -87,4 +86,14 @@ div > .doubleMark1 {
   margin-right: 5px;
   margin-top: -2px;
   height: 20px;
+}
+.homeIcon {
+  color: white;
+  height: 25px;
+  margin-top: 35px;
+  margin-left: 35px;
+}
+
+.homeIcon:hover {
+  color: #ffffff79;
 }

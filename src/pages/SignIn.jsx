@@ -76,7 +76,7 @@ const SignIn = () => {
                 setEmail(e.target.value);
               }}></input>
           </div>
-          <div>
+          <div className={signin.password}>
             비밀번호
             <input
               type="password"
@@ -86,8 +86,12 @@ const SignIn = () => {
               }}></input>
           </div>
           <button className={signin.loginBtn}>로그인</button>
-          <button className={signin.signupBtn}>
-            <Link to="/SignUp">회원가입</Link>
+          <button
+            className={signin.signupBtn}
+            onClick={() => {
+              window.location = "/SignUp";
+            }}>
+            회원가입
           </button>
         </form>
       )}

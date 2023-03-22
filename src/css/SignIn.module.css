@@ -9,22 +9,58 @@
 .login {
   font-family: "TAEBAEKmilkyway";
   color: white;
-  /* margin-top: 150px;
-  margin-left: 500px; */
+
   margin: 13%;
   margin-left: 40%;
   padding: 20px;
-  align-content: center;
-  width: 200px;
-  height: 200px;
+  width: 210px;
+  height: 250px;
   color: white;
   background-color: rgba(255, 255, 255, 0.146);
 }
-.loginBtn {
-  margin-top: 10px;
-  flex-wrap: wrap;
+.loginDiv {
+  text-align: center;
+  margin-top: -8px;
 }
+.loginBtn {
+  display: flex;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  width: 210px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+}
+.signupBtn {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 3px;
+  height: 30px;
+  width: 210px;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  border-bottom: #ffffff79 0.5px solid;
+  border-left: medium none;
+  border-right: medium none;
+  border-top: medium none;
+  outline: none;
+  background: transparent;
+  color: white;
+  font-family: "TAEBAEKmilkyway";
+  display: inline-block;
+  /* label 태그는 inline 태그이므로 width, height, margin 상하가 적용되지 않으므로 inline-block 속성으로 변경해주는 것이 우선이다!*/
+  width: 200px;
+  text-align: center;
+}
+
 button > a {
   display: flex;
   text-decoration: none;
+}
+
+.password {
+  margin-top: 15px;
 }

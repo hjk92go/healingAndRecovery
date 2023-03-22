@@ -10,11 +10,14 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
+  height: "500px",
   width: "fit-content",
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
   p: 4,
+  color: "black",
+  overflowY: "scroll",
 };
 
 export default function BasicModal({ toss }) {
@@ -24,20 +27,28 @@ export default function BasicModal({ toss }) {
 
   return (
     <div>
-      <Button onClick={handleOpen}>현재 작성된 게시물</Button>
+      <Button className={list.listTitle} onClick={handleOpen}>
+        지금까지 보관된 일상들
+      </Button>
       <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description">
         <Box sx={style}>
+          {/* <Box className={list.boxSt}> */}
           <table>
-            <Typography id="modal-modal-title" variant="h6" component="thead">
+            <Typography
+              id="modal-modal-title"
+              variant="h6"
+              component="thead"
+              className={list.TbTitle}>
               <tr>
-                <th>작성된 게시물</th>
+                <th>나의 하루들</th>
               </tr>
             </Typography>
             <Typography
+              className={list.listTb}
               id="modal-modal-description"
               sx={{ mt: 2 }}
               component="tbody">

@@ -1,3 +1,43 @@
+@font-face {
+  font-family: "TAEBAEKmilkyway";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/TAEBAEKmilkyway.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+/* .boxSt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 500px;
+  width: 700px;
+  background-color: white;
+  color: black
+  overflow: "scroll";
+} */
+
 body {
   color: black;
+  font-family: "TAEBAEKmilkyway";
+}
+
+.listTitle {
+  font-family: "TAEBAEKmilkyway";
+  color: #ffffff79;
+  background: transparent;
+  align-items: center;
+}
+
+.listTitle:hover {
+  background-color: transparent;
+}
+
+.TbTitle {
+  font-family: "TAEBAEKmilkyway";
+  font-weight: bold;
+}
+.listTb {
+  font-weight: bold;
+  font-family: "TAEBAEKmilkyway";
 }

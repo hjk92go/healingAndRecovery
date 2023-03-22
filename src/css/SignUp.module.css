@@ -7,17 +7,34 @@
 }
 
 form {
+  white-space: pre-wrap;
   font-family: "TAEBAEKmilkyway";
   color: white;
 }
 
 .createId {
-  margin: 13%;
+  margin: 10%;
   margin-left: 40%;
   padding: 20px;
-  align-content: center;
-  width: 200px;
-  height: 250px;
+  width: 210px;
+  height: 310px;
   color: white;
   background-color: rgba(255, 255, 255, 0.146);
+}
+
+.joinTitle {
+  text-align: center;
+  margin-top: -4px;
+}
+.password {
+  margin-top: 15px;
+}
+.rePassword {
+  margin-top: 15px;
+}
+.joinBtn {
+  font-family: "TAEBAEKmilkyway";
+  width: 210px;
+  height: 30px;
+  margin-top: 10px;
 }

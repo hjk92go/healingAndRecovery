@@ -13,6 +13,7 @@ const SignUp = () => {
   const [showMessagePass, setShowMessagePass] = useState();
   const [reShowMessagePass, setReShowMessagePass] = useState();
   const [okButton, setOkButton] = useState(true);
+  const onUser = localStorage.getItem("uid");
 
   //Form의 onSubmit에 연결할 함수
   // Form의 경우에는 새로고침으로 값이 사라질 수 있음
@@ -53,7 +54,7 @@ const SignUp = () => {
       setShowMessagePass("사용가능 합니다.");
     } else {
       setCheckPassword(false);
-      setShowMessagePass("영문, 숫자, 특수문자 포함 6자 이상 입력해주세요");
+      setShowMessagePass("영문, 숫자, 특수문자 포함\n6자 이상 입력해주세요");
     }
   };
 
@@ -79,27 +80,37 @@ const SignUp = () => {
   }, [checkPassword, testPassword]);
 
   return (
-    //onSubmit넣어야 한꺼번에 모아 보내줌 //백의경우 <form action="서버주소">의 형식으로 보내주기도 한다.
-    <form onSubmit={onSubmit}>
-      <div className={signup.createId}>
-        <h1>회원가입</h1>
-        <div>이메일</div>
-        <input
-          type="email"
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-        />
-        <div>비밀번호</div>
-        <input type="password" onChange={inputPassword} />
-        <div>{showMessagePass}</div>
-        <div>비밀번호 재확인</div>
-        <input type="password" onChange={correctPassword} />
-        <div>{reShowMessagePass}</div>
-        <br />
-        <button disabled={okButton}>가입하기</button>
-      </div>
-    </form>
+    <div>
+      {onUser ? (
+        <div>이미 로그인된 상태입니다</div>
+      ) : (
+        //onSubmit넣어야 한꺼번에 모아 보내줌 //백의경우 <form action="서버주소">의 형식으로 보내주기도 한다.
+        <form onSubmit={onSubmit}>
+          <div className={signup.createId}>
+            <div className={signup.joinTitle}>
+              <h1>회원가입</h1>
+            </div>
+            <div>이메일</div>
+            <input
+              type="email"
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+            />
+            <div className={signup.password}>비밀번호</div>
+            <input type="password" onChange={inputPassword} />
+            <div>{showMessagePass}</div>
+            <div className={signup.rePassword}>비밀번호 재확인</div>
+            <input type="password" onChange={correctPassword} />
+            <div>{reShowMessagePass}</div>
+            <br />
+            <button className={signup.joinBtn} disabled={okButton}>
+              가입하기
+            </button>
+          </div>
+        </form>
+      )}
+    </div>
   );
 };
 

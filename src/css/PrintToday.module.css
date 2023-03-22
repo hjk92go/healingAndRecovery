@@ -22,7 +22,7 @@ body {
 
 .day {
   font-size: large;
-  font-weight: bold;
+  /* font-weight: bold; */
   margin-top: -125px;
   margin-bottom: 10px;
   /* color: rgb(77, 16, 135);
@@ -69,12 +69,13 @@ span {
 
 .reIcon {
   color: rgba(166, 36, 36, 0.861);
-  margin-bottom: -2px;
+  margin-bottom: -1.5px;
 }
 .reIcon:hover {
   color: rgba(166, 36, 36, 0.861);
   height: 20px;
   margin-bottom: -3px;
+  /* color: white; */
 }
 
 .days {

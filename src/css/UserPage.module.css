@@ -1,12 +1,4 @@
 @font-face {
-  font-family: "Chosunilbo_myungjo";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "TAEBAEKmilkyway";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/TAEBAEKmilkyway.woff2")
     format("woff2");
@@ -39,15 +31,13 @@ form {
   justify-content: center;
 }
 
-input {
+.insertComment {
   border-bottom: #ffffff79 0.5px solid;
   border-left: medium none;
   border-right: medium none;
   border-top: medium none;
   outline: none;
   background: transparent;
-}
-input {
   color: white;
   font-family: "TAEBAEKmilkyway";
   display: inline-block;
@@ -71,7 +61,7 @@ input {
 }
 
 .outBtn:hover {
-  font-weight: bold;
+  color: #ffffff79;
 }
 .okBtn {
   border: none;
@@ -85,16 +75,15 @@ input {
   text-decoration-line: none;
   justify-content: right;
   margin-right: 65px;
-  margin-top: 20px;
 }
 .homeIcon {
   height: 25px;
 }
 .homeBtn:hover {
-  font-weight: bold;
+  color: #ffffff79;
 }
-.towBtns {
-  margin-top: 30px;
+.twoBtns {
+  margin-top: 40px;
   margin-right: 1150px;
 }
 
@@ -102,4 +91,7 @@ input {
   color: rgba(166, 36, 36, 0.861);
   height: 23px;
   margin-bottom: -3px;
+}
+.check:hover {
+  color: white;
 }

@@ -58,7 +58,7 @@ const UserPage = () => {
     <div>
       {state.isLogin ? (
         <div>
-          <div className={userpage.towBtns}>
+          <div className={userpage.twoBtns}>
             <Link className={userpage.homeBtn} to="/">
               <FontAwesomeIcon className={userpage.homeIcon} icon={faHouse} />
             </Link>
@@ -70,10 +70,9 @@ const UserPage = () => {
           <div className={userpage.inputText}>
             <span>당신의 끝나지 않은 긴 하루를 마무리 하며</span>
             <form onSubmit={onSubmit} className={userpage.writeForm}>
-              {/* <div className={userpage.text}>당신의 하루를&nbsp;</div> */}
               <input
                 type="text"
-                className="insertComment"
+                className={userpage.insertComment}
                 onChange={(e) => {
                   setComment(e.target.value);
                 }}
