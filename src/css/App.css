@@ -8,5 +8,6 @@ img {
   position: absolute;
   z-index: -1;
   top: 0;
+
   filter: brightness(60%);
 }

@@ -10,7 +10,7 @@ import {
 import { db } from "../data/firebase";
 import print from "../css/PrintToday.module.css";
 import { useContext, useEffect, useState } from "react";
-import Modal from "../components/WriteList";
+import Modal from "./WriteList";
 import ScriptFile from "../data/ScriptFile";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faForward } from "@fortawesome/free-solid-svg-icons";
@@ -29,6 +29,7 @@ const PrintToday = () => {
   const showScript = () => {
     setRandomNum(Math.floor(Math.random() * selectUserDb.length));
   };
+  // const firstNum = Math.floor(Math.random() * selectUserDb.length);
 
   const readToday = async () => {
     try {
@@ -51,7 +52,10 @@ const PrintToday = () => {
   //배열이 실행될때, 안의 함수를 실행시킨다는 의미. 배열안에 어떤 함수를 넣는다면 그 함수가 실행되고, 빈 배열로 뒀을때는 현재 컴포넌트가 실행될때라는 의미, 배열안에 함수를 넣을시, 무한READ 주의
   useEffect(() => {
     readToday();
+    showScript();
   }, []);
+
+  console.log("랜덤숫자", randomNum);
 
   //삭제 버튼 만들어야한다.
   const deleteDb = async (text) => {
@@ -117,7 +121,7 @@ const PrintToday = () => {
           {selectUserDb.length > 0 && selectUserDb[randomNum].data().text}
         </div>
       </div>
-      {/* <div className={print.days}>지금까지 보관된 일상들</div> */}
+
       <Modal className={print.days} toss={TodayDB} />
     </div>
   );

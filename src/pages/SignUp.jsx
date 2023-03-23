@@ -1,15 +1,14 @@
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import signup from "../css/SignUp.module.css";
 
 const SignUp = () => {
   //이메일,비밀번호,확인
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  const [checkPassword, setCheckPassword] = useState();
+  const [isPasswordConfirm, setIspasswordConfirm] = useState();
+
   //검사
-  const [testPassword, setTestPassword] = useState();
   const [showMessagePass, setShowMessagePass] = useState();
   const [reShowMessagePass, setReShowMessagePass] = useState();
   const [okButton, setOkButton] = useState(true);
@@ -48,36 +47,36 @@ const SignUp = () => {
   const inputPassword = (e) => {
     setPassword(e.target.value);
     const regex =
-      /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+])(?!.*[^a-zA-z0-9$`~!@$!%*#^?&\\(\\)\-_=+]).{8,20}$/;
+      /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+])(?!.*[^a-zA-z0-9$`~!@$!%*#^?&\\(\\)\-_=+]).{5,20}$/;
     if (regex.test(password) === true) {
-      setCheckPassword(true);
       setShowMessagePass("사용가능 합니다.");
     } else {
-      setCheckPassword(false);
       setShowMessagePass("영문, 숫자, 특수문자 포함\n6자 이상 입력해주세요");
     }
+    correctPassword(e);
   };
 
   const correctPassword = (e) => {
-    const isPasswordConfirm = e.target.value;
-    if (password !== isPasswordConfirm) {
-      setTestPassword(false);
+    setIspasswordConfirm(e.target.value);
+    if (password !== e.target.value) {
       setReShowMessagePass("비밀번호가 일치하지 않습니다.");
-    } else {
-      setTestPassword(true);
+    } else if (password === e.target.value) {
       setReShowMessagePass("비밀번호가 일치합니다.");
+    } else if (password === true) {
+      setShowMessagePass("사용가능 합니다.");
+    } else {
+      setShowMessagePass("영문, 숫자, 특수문자 포함\n6자 이상 입력해주세요");
     }
   };
-
   console.log("패스워드", password);
 
   useEffect(() => {
-    if (checkPassword && testPassword == true) {
+    if (password === isPasswordConfirm) {
       setOkButton(false);
-    } else {
+    } else if (password !== isPasswordConfirm) {
       setOkButton(true);
     }
-  }, [checkPassword, testPassword]);
+  }, [inputPassword, correctPassword, password, isPasswordConfirm]);
 
   return (
     <div>

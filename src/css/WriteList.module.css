@@ -13,24 +13,39 @@
   height: 500px;
   width: 700px;
   background-color: white;
-  color: black
+  color: black;
+  font-family: "TAEBAEKmilkyway";
   overflow: "scroll";
 } */
 
 body {
   color: black;
-  font-family: "TAEBAEKmilkyway";
+  color: #ffffff79;
+  /* background: transparent; */
+  /* display: flex; */
+  /* text-align: center; */
 }
 
-.listTitle {
+.aa > button {
+  text-align: center;
+  margin: 0 auto;
+  color: #ffffff79;
+  position: absolute;
+  top: 67%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "TAEBAEKmilkyway";
+}
+.aa > button:hover {
+  text-align: center;
+  background-color: transparent;
+}
+
+button > .listTitle {
   font-family: "TAEBAEKmilkyway";
   color: #ffffff79;
-  background: transparent;
-  align-items: center;
-}
-
-.listTitle:hover {
-  background-color: transparent;
+  /* background: transparent; */
+  /* display: flex; */
 }
 
 .TbTitle {

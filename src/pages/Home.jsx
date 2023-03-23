@@ -18,7 +18,7 @@ const Home = () => {
     <div className={home.main}>
       <div className={home.intro}>
         <h1>나의 짧은 조각들</h1>
-        <div>오늘 하루는 어땠나요?</div>
+        <div className={home.text}>오늘 하루는 어땠나요?</div>
       </div>
       <br />
       {localStorage.getItem("uid") ? (

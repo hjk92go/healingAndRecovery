@@ -26,17 +26,14 @@ export default function BasicModal({ toss }) {
   const handleClose = () => setOpen(false);
 
   return (
-    <div>
-      <Button className={list.listTitle} onClick={handleOpen}>
-        지금까지 보관된 일상들
-      </Button>
+    <div className={list.aa}>
+      <Button onClick={handleOpen}>지금까지 보관된 일상들</Button>
       <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description">
         <Box sx={style}>
-          {/* <Box className={list.boxSt}> */}
           <table>
             <Typography
               id="modal-modal-title"

@@ -5,7 +5,7 @@ import UserPage from "./pages/UserPage";
 import Guest from "./pages/Guest";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
-import PrintToday from "./pages/PrintToday";
+import PrintToday from "./components/PrintToday";
 import {} from "./css/App.css";
 
 function App() {
@@ -18,7 +18,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/UserPage" element={<UserPage />} />
-            <Route path="/PrintToday" element={<PrintToday />} />
             <Route path="/Guest" element={<Guest />} />
             <Route path="/SignIn" element={<SignIn />} />
             <Route path="/SignUp" element={<SignUp />} />

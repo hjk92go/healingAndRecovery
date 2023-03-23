@@ -6,7 +6,7 @@ import SignOut from "../components/SignOut";
 import ScriptFile from "../data/ScriptFile";
 import { getAuth } from "firebase/auth";
 import userpage from "../css/UserPage.module.css";
-import PrintToday from "./PrintToday";
+import PrintToday from "../components/PrintToday";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
@@ -16,7 +16,7 @@ const UserPage = () => {
   const [comment, setComment] = useState("");
 
   const onSubmit = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     // setInsert(comment);
     addToday();
   };

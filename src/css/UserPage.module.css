@@ -20,7 +20,10 @@ form {
   color: white;
   /* padding: 30px; */
   text-align: center;
-  margin-top: 40px;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .text {
   margin-top: 4px;
@@ -56,8 +59,8 @@ form {
   color: white;
   text-decoration-line: none;
   justify-content: right;
-  margin-top: -23px;
-  margin-right: 20px;
+  margin-top: -23.5px;
+  margin-right: -45px;
 }
 
 .outBtn:hover {
@@ -74,7 +77,6 @@ form {
   color: white;
   text-decoration-line: none;
   justify-content: right;
-  margin-right: 65px;
 }
 .homeIcon {
   height: 25px;
@@ -83,8 +85,10 @@ form {
   color: #ffffff79;
 }
 .twoBtns {
-  margin-top: 40px;
-  margin-right: 1150px;
+  position: absolute;
+  top: 8%;
+  left: 4%;
+  transform: translate(-50%, -50%);
 }
 
 .check {
