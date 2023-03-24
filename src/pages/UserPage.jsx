@@ -1,6 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { db } from "../data/firebase";
-import { collection, addDoc } from "firebase/firestore";
+import {
+  getDocs,
+  query,
+  orderBy,
+  collection,
+  addDoc,
+} from "firebase/firestore";
 import { Link, useNavigate } from "react-router-dom";
 import SignOut from "../components/SignOut";
 import ScriptFile from "../data/ScriptFile";
@@ -14,11 +20,32 @@ import { faHouse } from "@fortawesome/free-solid-svg-icons";
 const UserPage = () => {
   const { state, action } = useContext(ScriptFile);
   const [comment, setComment] = useState("");
+  const [printData, setPrintData] = useState([]); //데이터가 배열로!!!
 
   const onSubmit = (e) => {
-    // e.preventDefault();
-    // setInsert(comment);
+    e.preventDefault();
     addToday();
+    readToday();
+    setComment("");
+  };
+
+  const readToday = async () => {
+    try {
+      // today콜렉션의 모든 데이터를 불러는 쿼리, 불러올 데이터에 조건을 넣고싶으면 where 사용해준다.
+      const readDB = query(collection(db, "today"), orderBy("day", "desc"));
+      //가져온 데이터를 쿼리스냅샷에 넣은다음 불러온다.
+      const querySnapshop = await getDocs(readDB);
+      let array = [];
+      querySnapshop.forEach((doc) => {
+        //불러온 문서를 배열안에 넣어준다 => 안 넣어주면 무한으로 불러옴...
+        array.push(doc);
+        // console.log("doc", doc.data().text);
+      });
+      //배열을 state에 넣어준다.
+      setPrintData(array);
+    } catch (error) {
+      console.log("ERROR", error.messange);
+    }
   };
 
   const user = localStorage.getItem("uid");
@@ -76,6 +103,7 @@ const UserPage = () => {
                 onChange={(e) => {
                   setComment(e.target.value);
                 }}
+                value={comment}
                 placeholder="당신의 하루를 여기에 입력해주세요."
               />
               <button className={userpage.okBtn}>
@@ -83,7 +111,7 @@ const UserPage = () => {
               </button>
             </form>
           </div>
-          <PrintToday />
+          <PrintToday readToday={readToday} printData={printData} />
         </div>
       ) : (
         <div>로그인실패</div>

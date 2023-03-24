@@ -11,7 +11,7 @@ import {} from "./css/App.css";
 function App() {
   return (
     <div>
-      <img src={require("./img/backgroundIMG_6.jpg")} />
+      <img src={require("./img/backgroundIMG_1.jpg")} />
       {/*dataProvider 감싸야 data파일을 읽어올수있다. */}
       <DataProvider>
         <BrowserRouter>

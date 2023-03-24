@@ -87,3 +87,12 @@ span {
   text-align: center;
   margin-top: -30px;
 }
+
+.xMarkBtn {
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+.xMark {
+  color: rgba(166, 36, 36, 0.861);
+}
