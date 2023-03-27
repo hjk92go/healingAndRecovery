@@ -1,17 +1,18 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
 import { faCircleArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import not from "../css/NotFound.module.css";
+import { useNavigate } from "react-router";
 
 const NotFound = () => {
+  const navigator = useNavigate();
   return (
     <div className={not.div404}>
       <button
         className={not.home}
         onClick={() => {
-          window.location = "/";
+          navigator(-1);
         }}>
-        Go Home
+        Go Back
         <FontAwesomeIcon className={not.arrow} icon={faCircleArrowLeft} />
       </button>
       <img className={not.img404} src={require("../img/NotFound.jpg")} />

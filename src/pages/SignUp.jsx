@@ -1,5 +1,6 @@
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 import signup from "../css/SignUp.module.css";
 import NotFound from "./NotFound";
 
@@ -8,7 +9,6 @@ const SignUp = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [isPasswordConfirm, setIspasswordConfirm] = useState();
-  const [testPassword, setTestPassword] = useState();
   //검사
   const [showMessagePass, setShowMessagePass] = useState();
   const [reShowMessagePass, setReShowMessagePass] = useState();
@@ -21,6 +21,7 @@ const SignUp = () => {
     e.preventDefault();
     emailSignUp();
   };
+  const navigator = useNavigate();
 
   //이메일 회원가입
   const emailSignUp = () => {
@@ -30,7 +31,7 @@ const SignUp = () => {
         const user = userCredential.user;
         console.log(user);
         alert("회원가입이 완료되었습니다.");
-        window.location = "/signin";
+        navigator("/signin");
       })
 
       .catch((error) => {
@@ -50,27 +51,23 @@ const SignUp = () => {
     const regex =
       /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{5,}$/;
 
-    if (regex.test(password) === true) {
+    if (regex.test(e.target.value) === true) {
       setShowMessagePass("사용가능 합니다.");
-      setTestPassword(true);
     } else {
       setShowMessagePass("영문, 숫자, 특수문자 포함\n6자 이상 입력해주세요");
-      setTestPassword(false);
     }
   };
 
   const correctPassword = (e) => {
     setIspasswordConfirm(e.target.value);
   };
-  console.log("패스워드", password);
-  console.log("패스워드확인", isPasswordConfirm);
+  // console.log("패스워드", password);
+  // console.log("패스워드확인", isPasswordConfirm);
 
   useEffect(() => {
     if (password && password === isPasswordConfirm) {
       setReShowMessagePass("비밀번호가 일치합니다.");
-      if (testPassword) {
-        setOkButton(false);
-      }
+      setOkButton(false);
     } else if (password !== isPasswordConfirm) {
       setReShowMessagePass("비밀번호가 일치하지 않습니다.");
       setOkButton(true);

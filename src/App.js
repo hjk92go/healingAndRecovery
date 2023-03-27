@@ -14,8 +14,7 @@ function App() {
       <img className={style.body} src={require("./img/backgroundIMG_1.jpg")} />
       {/*dataProvider 감싸야 data파일을 읽어올수있다. */}
       <DataProvider>
-          
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <BrowserRouter basename="/healingAndRecovery">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/userpage" element={<UserPage />} />

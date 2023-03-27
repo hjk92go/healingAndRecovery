@@ -2,7 +2,6 @@ import { createContext, useState } from "react";
 
 const ScriptFile = createContext();
 const DataProvider = ({ children }) => {
-  const [isLogin, setIsLogin] = useState(false);
   //script file
   const [script, setScript] = useState([
     {
@@ -313,8 +312,8 @@ const DataProvider = ({ children }) => {
     },
   ]);
   const value = {
-    state: { script, isLogin },
-    action: { setScript, setIsLogin },
+    state: { script },
+    action: { setScript },
   };
   return <ScriptFile.Provider value={value}> {children}</ScriptFile.Provider>;
 };

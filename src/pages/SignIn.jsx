@@ -6,6 +6,7 @@ import { useContext, useState, useEffect } from "react";
 import ScriptFile from "../data/ScriptFile";
 import signin from "../css/SignIn.module.css";
 import NotFound from "../pages/NotFound";
+import { useNavigate } from "react-router";
 
 const SignIn = () => {
   const { state, action } = useContext(ScriptFile);
@@ -17,6 +18,7 @@ const SignIn = () => {
     emailSignIn();
   };
 
+  const navigator = useNavigate();
   //로그인
   const emailSignIn = () => {
     const auth = getAuth();
@@ -27,9 +29,9 @@ const SignIn = () => {
         //키에 데이터 쓰기
         localStorage.setItem("uid", user.uid);
         console.log("UID", user.uid);
-        action.setIsLogin(true);
         alert("HI");
-        window.location = "/UserPage";
+        // window.location = "/userage";
+        navigator("/userpage");
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -51,38 +53,40 @@ const SignIn = () => {
       {user ? (
         <NotFound />
       ) : (
-        <form onSubmit={onSubmit} className={signin.login}>
-          <div className={signin.loginDiv}>
-            <h1>로그인</h1>
-          </div>
-          <div>
-            이메일
-            <br />
-            <input
-              type="email"
-              required
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}></input>
-          </div>
-          <div className={signin.password}>
-            비밀번호
-            <input
-              type="password"
-              required
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}></input>
-          </div>
-          <button className={signin.loginBtn}>로그인</button>
+        <div className={signin.login}>
+          <form onSubmit={onSubmit}>
+            <div className={signin.loginDiv}>
+              <h1>로그인</h1>
+            </div>
+            <div>
+              이메일
+              <br />
+              <input
+                type="email"
+                required
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}></input>
+            </div>
+            <div className={signin.password}>
+              비밀번호
+              <input
+                type="password"
+                required
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}></input>
+            </div>
+            <button className={signin.loginBtn}>로그인</button>
+          </form>
           <button
             className={signin.signupBtn}
             onClick={() => {
-              window.location = "/signup";
+              navigator("/signup");
             }}>
             회원가입
           </button>
-        </form>
+        </div>
       )}
     </div>
   );

@@ -6,10 +6,11 @@ import { faPersonThroughWindow } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
 const SignOut = () => {
+  const navigator = useNavigate();
   const isSignOut = () => {
     localStorage.clear();
     alert("로그아웃되었습니다.");
-    window.location = "/";
+    navigator("/");
   };
   return (
     <div className={signout.onBtn}>

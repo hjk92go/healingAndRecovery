@@ -64,9 +64,6 @@ const UserPage = () => {
       console.log("ok", docRef.id);
       console.log("uid", docRef.uid);
       alert("오늘의 일기 등록 완료");
-      //페이지 이동 안쓸꺼면 마지막에 삭제할것
-      // window.location = "/PrintToday";
-      // navigate("/PrintToday", { state: { user: userUid } });
     } catch (e) {
       console.log("error");
     }
