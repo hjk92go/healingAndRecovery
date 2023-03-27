@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/healingAndRecovery/static/css/main.3081114b.css",
-    "main.js": "/healingAndRecovery/static/js/main.4dc6d6c1.js",
+    "main.js": "/healingAndRecovery/static/js/main.01c0fdad.js",
     "static/js/787.bd6ee2cf.chunk.js": "/healingAndRecovery/static/js/787.bd6ee2cf.chunk.js",
     "static/media/NotFound.jpg": "/healingAndRecovery/static/media/NotFound.ce293654fc5b055593cf.jpg",
     "static/media/backgroundIMG_1.jpg": "/healingAndRecovery/static/media/backgroundIMG_1.8818f367176da6ede6b9.jpg",
     "index.html": "/healingAndRecovery/index.html",
     "main.3081114b.css.map": "/healingAndRecovery/static/css/main.3081114b.css.map",
-    "main.4dc6d6c1.js.map": "/healingAndRecovery/static/js/main.4dc6d6c1.js.map",
+    "main.01c0fdad.js.map": "/healingAndRecovery/static/js/main.01c0fdad.js.map",
     "787.bd6ee2cf.chunk.js.map": "/healingAndRecovery/static/js/787.bd6ee2cf.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3081114b.css",
-    "static/js/main.4dc6d6c1.js"
+    "static/js/main.01c0fdad.js"
   ]
 }
