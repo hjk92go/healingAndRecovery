@@ -5,15 +5,8 @@ import ScriptFile from "../data/ScriptFile";
 
 const Home = () => {
   const { state, action } = useContext(ScriptFile);
-
   const user = localStorage.getItem("uid");
-  useEffect(() => {
-    if (user) {
-      action.setIsLogin(true);
-    } else {
-      action.setIsLogin(false);
-    }
-  }, []);
+
   return (
     <div className={home.main}>
       <div className={home.intro}>
@@ -21,7 +14,7 @@ const Home = () => {
         <div className={home.text}>오늘 하루는 어땠나요?</div>
       </div>
       <br />
-      {localStorage.getItem("uid") ? (
+      {user ? (
         <div className={home.linkBtn}>
           <Link to="/UserPage" className={home.btn10} id={home.userBtn}>
             회원

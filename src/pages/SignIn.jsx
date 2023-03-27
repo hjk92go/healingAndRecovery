@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import ScriptFile from "../data/ScriptFile";
 import signin from "../css/SignIn.module.css";
+import NotFound from "../pages/NotFound";
 
 const SignIn = () => {
   const { state, action } = useContext(ScriptFile);
@@ -47,20 +48,12 @@ const SignIn = () => {
       });
   };
 
-  const user = localStorage.getItem("uid");
-  //user값이 변할때 마다 리렌더링
-  useEffect(() => {
-    if (user) {
-      action.setIsLogin(true);
-    } else {
-      action.setIsLogin(false);
-    }
-  }, [user]);
+  const user = localStorage.getItem("uid"); //user값이 변할때 마다 리렌더링
 
   return (
     <div>
-      {state.isLogin ? (
-        <div>이미 로그인된 상태입니다.</div>
+      {user ? (
+        <NotFound />
       ) : (
         <form onSubmit={onSubmit} className={signin.login}>
           <div className={signin.loginDiv}>

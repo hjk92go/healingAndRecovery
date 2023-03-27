@@ -41,14 +41,6 @@ const PrintToday = ({ readToday, printData }) => {
     await deleteDoc(todayDoc);
   };
 
-  useEffect(() => {
-    if (user) {
-      action.setIsLogin(true);
-    } else {
-      action.setIsLogin(false);
-    }
-  }, [user]);
-
   const TodayDB = printData.map((printData, idx) =>
     printData.data().user === user ? (
       <tr key={idx}>

@@ -37,4 +37,19 @@ form {
   width: 210px;
   height: 30px;
   margin-top: 10px;
+  font-family: "TAEBAEKmilkyway";
+  background-color: rgba(98, 145, 198, 0.642);
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+.joinBtn:disabled {
+  font-family: "TAEBAEKmilkyway";
+  border: none;
+  background-color: rgba(149, 162, 177, 0.546);
+  cursor: default;
+  font-weight: 200;
+
+  color: rgba(255, 255, 255, 0.671);
 }

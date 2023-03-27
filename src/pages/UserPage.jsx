@@ -16,6 +16,7 @@ import PrintToday from "../components/PrintToday";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
+import NotFound from "./NotFound";
 
 const UserPage = () => {
   const { state, action } = useContext(ScriptFile);
@@ -49,14 +50,6 @@ const UserPage = () => {
   };
 
   const user = localStorage.getItem("uid");
-  //user값이 변할때 마다 리렌더링
-  useEffect(() => {
-    if (user) {
-      action.setIsLogin(true);
-    } else {
-      action.setIsLogin(false);
-    }
-  }, [user]);
 
   const addToday = async () => {
     try {
@@ -83,7 +76,7 @@ const UserPage = () => {
 
   return (
     <div>
-      {state.isLogin ? (
+      {user ? (
         <div>
           <div className={userpage.twoBtns}>
             <Link className={userpage.homeBtn} to="/">
@@ -103,6 +96,7 @@ const UserPage = () => {
                 onChange={(e) => {
                   setComment(e.target.value);
                 }}
+                required
                 value={comment}
                 placeholder="당신의 하루를 여기에 입력해주세요."
               />
@@ -114,7 +108,7 @@ const UserPage = () => {
           <PrintToday readToday={readToday} printData={printData} />
         </div>
       ) : (
-        <div>로그인실패</div>
+        <NotFound />
       )}
     </div>
   );

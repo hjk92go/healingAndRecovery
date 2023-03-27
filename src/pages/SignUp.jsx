@@ -1,13 +1,14 @@
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useEffect, useState } from "react";
 import signup from "../css/SignUp.module.css";
+import NotFound from "./NotFound";
 
 const SignUp = () => {
   //이메일,비밀번호,확인
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [isPasswordConfirm, setIspasswordConfirm] = useState();
-
+  const [testPassword, setTestPassword] = useState();
   //검사
   const [showMessagePass, setShowMessagePass] = useState();
   const [reShowMessagePass, setReShowMessagePass] = useState();
@@ -48,40 +49,38 @@ const SignUp = () => {
     setPassword(e.target.value);
     const regex =
       /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+])(?!.*[^a-zA-z0-9$`~!@$!%*#^?&\\(\\)\-_=+]).{5,20}$/;
+
     if (regex.test(password) === true) {
       setShowMessagePass("사용가능 합니다.");
+      setTestPassword(true);
     } else {
       setShowMessagePass("영문, 숫자, 특수문자 포함\n6자 이상 입력해주세요");
+      setTestPassword(false);
     }
-    correctPassword(e);
   };
 
   const correctPassword = (e) => {
     setIspasswordConfirm(e.target.value);
-    if (password !== e.target.value) {
-      setReShowMessagePass("비밀번호가 일치하지 않습니다.");
-    } else if (password === e.target.value) {
-      setReShowMessagePass("비밀번호가 일치합니다.");
-    } else if (password === true) {
-      setShowMessagePass("사용가능 합니다.");
-    } else {
-      setShowMessagePass("영문, 숫자, 특수문자 포함\n6자 이상 입력해주세요");
-    }
   };
   console.log("패스워드", password);
+  console.log("패스워드확인", isPasswordConfirm);
 
   useEffect(() => {
-    if (password === isPasswordConfirm) {
-      setOkButton(false);
+    if (password && password === isPasswordConfirm) {
+      setReShowMessagePass("비밀번호가 일치합니다.");
+      if (testPassword) {
+        setOkButton(false);
+      }
     } else if (password !== isPasswordConfirm) {
+      setReShowMessagePass("비밀번호가 일치하지 않습니다.");
       setOkButton(true);
     }
-  }, [inputPassword, correctPassword, password, isPasswordConfirm]);
+  }, [password, isPasswordConfirm]);
 
   return (
     <div>
       {onUser ? (
-        <div>이미 로그인된 상태입니다</div>
+        <NotFound />
       ) : (
         //onSubmit넣어야 한꺼번에 모아 보내줌 //백의경우 <form action="서버주소">의 형식으로 보내주기도 한다.
         <form onSubmit={onSubmit}>

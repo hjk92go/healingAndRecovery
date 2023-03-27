@@ -5,13 +5,13 @@ import UserPage from "./pages/UserPage";
 import Guest from "./pages/Guest";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
-import PrintToday from "./components/PrintToday";
-import {} from "./css/App.css";
+import style from "./css/App.module.css";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
     <div>
-      <img src={require("./img/backgroundIMG_1.jpg")} />
+      <img className={style.body} src={require("./img/backgroundIMG_1.jpg")} />
       {/*dataProvider 감싸야 data파일을 읽어올수있다. */}
       <DataProvider>
         <BrowserRouter>
@@ -21,6 +21,7 @@ function App() {
             <Route path="/Guest" element={<Guest />} />
             <Route path="/SignIn" element={<SignIn />} />
             <Route path="/SignUp" element={<SignUp />} />
+            <Route path="/*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
       </DataProvider>

@@ -40,7 +40,6 @@ const Guest = () => {
           </Link>
         </div>
       )}
-
       <div className={style.cheerUp}>
         <span className={style.doubleMark1}>❝</span>
         <span className={style.doubleMark2}>❞</span>

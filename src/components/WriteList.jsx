@@ -10,7 +10,7 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  height: "500px",
+  height: "400px",
   width: "fit-content",
   bgcolor: "background.paper",
   border: "2px solid #000",
@@ -33,26 +33,28 @@ export default function BasicModal({ toss }) {
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description">
-        <Box sx={style}>
-          <table>
-            <Typography
-              id="modal-modal-title"
-              variant="h6"
-              component="thead"
-              className={list.TbTitle}>
-              <tr>
-                <th>나의 하루들</th>
-              </tr>
-            </Typography>
-            <Typography
-              className={list.listTb}
-              id="modal-modal-description"
-              sx={{ mt: 2 }}
-              component="tbody">
-              {toss}
-            </Typography>
-          </table>
-        </Box>
+        <div className={list.box}>
+          <Box sx={style}>
+            <table>
+              <div
+                id="modal-modal-title"
+                variant="h6"
+                component="thead"
+                className={list.TbTitle}>
+                <tr>
+                  <th>나의 하루들</th>
+                </tr>
+              </div>
+              <div
+                className={list.listTb}
+                id="modal-modal-description"
+                sx={{ mt: 2 }}
+                component="tbody">
+                {toss}
+              </div>
+            </table>
+          </Box>
+        </div>
       </Modal>
     </div>
   );
