@@ -31,12 +31,14 @@
   align-items: center;
   justify-content: center;
   font-family: "TAEBAEKmilkyway";
-  background-color: rgba(98, 145, 198, 0.642);
-
+  background-color: rgba(149, 162, 177, 0.642);
   border: none;
   cursor: pointer;
   color: white;
   font-weight: bold;
+}
+.loginBtn:hover {
+  background-color: rgba(98, 145, 198, 0.642);
 }
 .signupBtn {
   display: flex;
@@ -47,13 +49,15 @@
   align-items: center;
   justify-content: center;
   font-family: "TAEBAEKmilkyway";
-  background-color: rgba(98, 145, 198, 0.642);
+  background-color: rgba(149, 162, 177, 0.642);
   border: none;
   cursor: pointer;
   color: white;
   font-weight: bold;
 }
-
+.signupBtn:hover {
+  background-color: rgba(98, 145, 198, 0.642);
+}
 input {
   border-bottom: #ffffff79 0.5px solid;
   border-left: medium none;
