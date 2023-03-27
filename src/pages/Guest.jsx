@@ -1,7 +1,6 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import ScriptFile from "../data/ScriptFile";
 import style from "../css/Guest.module.css";
-import { fontSize } from "@mui/system";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faForward } from "@fortawesome/free-solid-svg-icons";
@@ -57,7 +56,7 @@ const Guest = () => {
       </div>
       <div className={style.ad}>
         당신의 소중한 하루를 이곳에 보관해주세요&nbsp;
-        <Link to="/SignUp">
+        <Link to="/signup">
           <FontAwesomeIcon className={style.userPlus} icon={faUserPlus} />
         </Link>
       </div>

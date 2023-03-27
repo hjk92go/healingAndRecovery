@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import home from "../css/Home.module.css";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import ScriptFile from "../data/ScriptFile";
 
 const Home = () => {
@@ -16,21 +16,21 @@ const Home = () => {
       <br />
       {user ? (
         <div className={home.linkBtn}>
-          <Link to="/UserPage" className={home.btn10} id={home.userBtn}>
+          <Link to="userpage" className={home.btn10} id={home.userBtn}>
             회원
           </Link>
-          <Link to="/Guest" className={home.btn10} id={home.guestBtn}>
+          <Link to="/guest" className={home.btn10} id={home.guestBtn}>
             비회원
           </Link>
         </div>
       ) : (
         <div className={home.linkBtn}>
-          <Link to="/SignIn" className={home.btn10} id={home.userBtn}>
+          <Link to="/signin" className={home.btn10} id={home.userBtn}>
             회원
           </Link>
           <div className={home.transition}></div>
 
-          <Link to="/Guest" className={home.btn10} id={home.guestBtn}>
+          <Link to="/guest" className={home.btn10} id={home.guestBtn}>
             비회원
           </Link>
         </div>

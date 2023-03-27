@@ -1,11 +1,8 @@
 import {
   getAuth,
   signInWithEmailAndPassword, //로그인
-  onAuthStateChanged, //사용자 정보 가져오기
 } from "firebase/auth";
 import { useContext, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import ScriptFile from "../data/ScriptFile";
 import signin from "../css/SignIn.module.css";
 import NotFound from "../pages/NotFound";
@@ -36,7 +33,6 @@ const SignIn = () => {
       })
       .catch((error) => {
         const errorCode = error.code;
-        const errorMessage = error.message;
         if (errorCode === "auth/user-not-found") {
           alert("없는 이메일 입니다");
         } else if (errorCode === "auth/invalid-email") {
@@ -82,7 +78,7 @@ const SignIn = () => {
           <button
             className={signin.signupBtn}
             onClick={() => {
-              window.location = "/SignUp";
+              window.location = "/signup";
             }}>
             회원가입
           </button>

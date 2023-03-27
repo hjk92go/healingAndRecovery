@@ -30,7 +30,7 @@ const SignUp = () => {
         const user = userCredential.user;
         console.log(user);
         alert("회원가입이 완료되었습니다.");
-        window.location = "/SignIn";
+        window.location = "/signin";
       })
 
       .catch((error) => {
