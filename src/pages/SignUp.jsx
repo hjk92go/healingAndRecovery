@@ -48,7 +48,7 @@ const SignUp = () => {
   const inputPassword = (e) => {
     setPassword(e.target.value);
     const regex =
-      /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+])(?!.*[^a-zA-z0-9$`~!@$!%*#^?&\\(\\)\-_=+]).{5,20}$/;
+      /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{5,}$/;
 
     if (regex.test(password) === true) {
       setShowMessagePass("사용가능 합니다.");
