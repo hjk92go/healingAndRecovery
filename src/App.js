@@ -18,10 +18,10 @@ function App() {
         <BrowserRouter basename={process.env.PUBLIC_URL}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/UserPage" element={<UserPage />} />
-            <Route path="/Guest" element={<Guest />} />
-            <Route path="/SignIn" element={<SignIn />} />
-            <Route path="/SignUp" element={<SignUp />} />
+            <Route path="/userpage" element={<UserPage />} />
+            <Route path="/guest" element={<Guest />} />
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/sigup" element={<SignUp />} />
             <Route path="/*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
