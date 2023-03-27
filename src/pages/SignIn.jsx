@@ -29,7 +29,7 @@ const SignIn = () => {
         //키에 데이터 쓰기
         localStorage.setItem("uid", user.uid);
         console.log("UID", user.uid);
-        alert("HI");
+        alert("Hi");
         // window.location = "/userage";
         navigator("/userpage");
       })
