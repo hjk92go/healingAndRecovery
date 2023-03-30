@@ -113,3 +113,34 @@ div > .doubleMark1 {
   left: 4%;
   transform: translate(-50%, -50%);
 }
+
+@media screen and (max-width: 420px) {
+  .cheerUp {
+    height: 250px;
+    width: 330px;
+    font-size: medium;
+    text-align: center;
+  }
+  .doubleMark1 {
+    color: transparent;
+  }
+  .doubleMark2 {
+    color: transparent;
+  }
+  .userPlus {
+    color: #ffffff79;
+    margin-right: 7px;
+    margin-bottom: -10px;
+  }
+
+  .userPlus:hover {
+    color: #ffffff79;
+    height: 20px;
+  }
+  .twoBtns {
+    position: absolute;
+    top: 9%;
+    left: 12%;
+    transform: translate(-50%, -50%);
+  }
+}

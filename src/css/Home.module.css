@@ -43,10 +43,21 @@
   justify-content: center;
 }
 
-#userBtn {
-  /* justify-content: center; */
-}
 .btn10:hover {
   font-weight: bold;
   /* text-shadow: 2px 2px black; */
+}
+
+@media screen and (max-width: 420px) {
+  .main {
+    font-family: "TAEBAEKmilkyway";
+    height: 130px;
+    width: 150px;
+    color: white;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 45%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+  }
 }

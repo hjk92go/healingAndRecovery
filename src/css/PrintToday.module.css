@@ -26,11 +26,8 @@ body {
 
 .day {
   font-size: large;
-  /* font-weight: bold; */
   margin-top: -125px;
   margin-bottom: 10px;
-  /* color: rgb(77, 16, 135);
-   */
   color: white;
 }
 .text {
@@ -38,10 +35,8 @@ body {
   font-weight: bold;
   color: white;
   margin-top: 20px;
-  /* color: rgb(77, 16, 135); */
 }
 .showList {
-  /* margin-right: 100px; */
   margin: 0 auto;
   color: black;
 }
@@ -95,4 +90,31 @@ span {
 }
 .xMark {
   color: rgba(166, 36, 36, 0.861);
+}
+
+@media screen and (max-width: 420px) {
+  .day {
+    font-size: small;
+    margin-top: -85px;
+    margin-bottom: 10px;
+    color: white;
+  }
+  .text {
+    font-size: large;
+    font-weight: bold;
+    color: white;
+    margin-top: 20px;
+  }
+
+  .doubleMark1 {
+    font-size: xx-small;
+    color: transparent;
+  }
+  .doubleMark2 {
+    font-size: xx-small;
+    color: transparent;
+  }
+  div > .days {
+    top: 100px;
+  }
 }

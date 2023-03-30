@@ -99,3 +99,44 @@ form {
 .check:hover {
   color: white;
 }
+
+@media screen and (max-width: 420px) {
+  .inputText {
+    font-family: "TAEBAEKmilkyway";
+    font-size: large;
+    display: flex-wrap;
+    color: white;
+    /* padding: 30px; */
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .insertComment {
+    border-bottom: #ffffff79 0.5px solid;
+    border-left: medium none;
+    border-right: medium none;
+    border-top: medium none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-family: "TAEBAEKmilkyway";
+    display: inline-block;
+    /* label 태그는 inline 태그이므로 width, height, margin 상하가 적용되지 않으므로 inline-block 속성으로 변경해주는 것이 우선이다!*/
+    width: 280px;
+    text-align: center;
+  }
+  ::-webkit-input-placeholder {
+    color: #ffffff79;
+    font-size: medium;
+  }
+
+  .twoBtns {
+    position: absolute;
+    top: 9%;
+    left: 12%;
+    transform: translate(-50%, -50%);
+  }
+}
