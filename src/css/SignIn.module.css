@@ -93,3 +93,11 @@ button > a {
     background-color: rgba(255, 255, 255, 0.146);
   }
 }
+@media screen and (max-width: 370px) {
+  .login {
+    margin: 55%;
+    margin-left: 15%;
+    width: 210px;
+    height: 250px;
+  }
+}

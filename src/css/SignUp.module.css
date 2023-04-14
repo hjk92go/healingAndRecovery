@@ -65,3 +65,11 @@ form {
     background-color: rgba(255, 255, 255, 0.146);
   }
 }
+
+@media screen and (max-width: 370px) {
+  .createId {
+    margin: 55%;
+    margin-left: 15%;
+    height: 280px;
+  }
+}
