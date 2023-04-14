@@ -58,9 +58,9 @@ form {
     font-family: "TAEBAEKmilkyway";
     color: white;
     margin: 45%;
-    margin-left: 20%;
+    margin-left: 18%;
     width: 210px;
-    height: 250px;
+    height: 290px;
     color: white;
     background-color: rgba(255, 255, 255, 0.146);
   }
@@ -70,6 +70,6 @@ form {
   .createId {
     margin: 55%;
     margin-left: 15%;
-    height: 280px;
+    height: 290px;
   }
 }
