@@ -50,6 +50,18 @@ form {
   background-color: rgba(149, 162, 177, 0.546);
   cursor: default;
   font-weight: 200;
-
   color: rgba(255, 255, 255, 0.671);
+}
+
+@media screen and (max-width: 420px) {
+  .createId {
+    font-family: "TAEBAEKmilkyway";
+    color: white;
+    margin: 45%;
+    margin-left: 20%;
+    width: 210px;
+    height: 250px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.146);
+  }
 }

@@ -98,7 +98,6 @@ const SignUp = () => {
             <div className={signup.rePassword}>비밀번호 재확인</div>
             <input type="password" onChange={correctPassword} />
             <div>{reShowMessagePass}</div>
-            <br />
             <button className={signup.joinBtn} disabled={okButton}>
               가입하기
             </button>

@@ -118,14 +118,18 @@ div > .doubleMark1 {
   .cheerUp {
     height: 250px;
     width: 330px;
-    font-size: medium;
-    text-align: center;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "TAEBAEKmilkyway";
+    color: white;
   }
   .doubleMark1 {
-    color: transparent;
+    display: none;
   }
   .doubleMark2 {
-    color: transparent;
+    display: none;
   }
   .userPlus {
     color: #ffffff79;
@@ -142,5 +146,9 @@ div > .doubleMark1 {
     top: 9%;
     left: 12%;
     transform: translate(-50%, -50%);
+  }
+  .comment {
+    font-size: x-large;
+    text-align: center;
   }
 }

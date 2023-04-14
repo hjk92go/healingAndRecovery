@@ -13,13 +13,13 @@ import { getFirestore } from "firebase/firestore";
 // import "firebase/compat/firestore";
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_apiKey,
-  authDomain: process.env.REACT_APP_authDomai,
-  projectId: process.env.REACT_APP_projectId,
-  storageBucket: process.env.REACT_APP_storageBucket,
-  messagingSenderId: process.env.REACT_APP_messagingSenderId,
-  appId: process.env.REACT_APP_appId,
-  measurementId: process.env.REACT_APP_measurementId,
+  apiKey: "AIzaSyBYI4WNrj34MDrzL7gSFwTOkwADwsEFzGk",
+  authDomain: "todaymylife-62d35.firebaseapp.com",
+  projectId: "todaymylife-62d35",
+  storageBucket: "todaymylife-62d35.appspot.com",
+  messagingSenderId: "416660437086",
+  appId: "1:416660437086:web:11c5df540181eb5d6b1ccf",
+  measurementId: "G-Z2DF4GMNRY",
 };
 
 // 파베초기화 - export해서 내보내줘야지 컴포넌트에서 무리없이 사용가능
