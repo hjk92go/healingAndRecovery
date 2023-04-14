@@ -43,9 +43,9 @@ div > .doubleMark1 {
 }
 
 .comment {
-  white-space: pre-line; /*데이터줄바꿈 하기 위함*/
   margin-top: -90px;
   font-size: xx-large;
+  word-break: keep-all;
 }
 
 .author {

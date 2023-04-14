@@ -74,3 +74,9 @@ th {
   border-radius: 10px;
   height: 20%;
 }
+
+@media screen and (max-width: 420px) {
+  .TbTitle > th {
+    font-size: small;
+  }
+}

@@ -21,8 +21,7 @@
 
 .img404 {
   z-index: -2;
-
-  height: 100vh;
+  height: 80vh;
   width: 50vw;
   position: absolute;
   top: 50%;
@@ -65,4 +64,21 @@
 }
 .source:hover {
   font-weight: bold;
+}
+
+@media screen and (max-width: 420px) {
+  .img404 {
+    margin-top: 5%;
+    height: 50vh;
+    width: 80vw;
+  }
+
+  .home {
+    top: 13%;
+    left: 7%;
+  }
+  .source {
+    bottom: 3%;
+    right: 4%;
+  }
 }
