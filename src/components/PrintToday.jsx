@@ -44,7 +44,13 @@ const PrintToday = ({ readToday, printData }) => {
   const TodayDB = printData.map((printData, idx) =>
     printData.data().user === user ? (
       <tr key={idx}>
-        <td>{printData.data().day.toDate().toLocaleDateString()}</td>
+        <td>
+          {printData.data().day.toDate().toLocaleDateString("ja-JP", {
+            year: "2-digit",
+            month: "2-digit",
+            day: "2-digit",
+          })}
+        </td>
         <td>{printData.data().text}</td>
         <td>
           <button
@@ -54,7 +60,8 @@ const PrintToday = ({ readToday, printData }) => {
               deleteDb(printData.id);
               alert("삭제완료");
               readToday();
-            }}>
+            }}
+          >
             <FontAwesomeIcon className={print.xMark} icon={faX} />
           </button>
         </td>
@@ -84,7 +91,8 @@ const PrintToday = ({ readToday, printData }) => {
             className={print.reBtn}
             onClick={() => {
               showScript();
-            }}>
+            }}
+          >
             <FontAwesomeIcon className={print.reIcon} icon={faForward} />
           </button>
         </div>
