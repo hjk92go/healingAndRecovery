@@ -33,5 +33,5 @@ https://hjk92go.github.io/healingAndRecovery
 - mui 사용하여 현재 작성한 게시물 확인가능
 
 <h3> 3. 모바일 반응형 디자인 지원 </h3>
-- max-width 420, 370 사이즈 반응형 디자인
-  -아이폰12, Z-플립 기준 사이즈
+
+- max-width 420, 370 사이즈 반응형 디자인(아이폰12, Z-플립 기준 사이즈)
